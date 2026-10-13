@@ -1,73 +1,313 @@
 <!-- experience.html (habilidades.html) -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habilidades y experiencia | Lizeth Dorantes</title>
-    <meta name="description" content="Tecnologías, herramientas y habilidades de Lizeth Dorantes, desarrolladora Java Full Stack Jr.">
-    
+    <meta name="description"
+        content="Tecnologías, herramientas y habilidades de Lizeth Dorantes, desarrolladora Java Full Stack Jr.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <header id="header-global" class="site-header"></header>
 
     <main class="seccion-alineada-izquierda">
         <div class="w-100">
-            <h1>Habilidades y experiencia</h1>
 
-            <!-- Leyenda de niveles -->
-            <ul class="leyenda" aria-label="Leyenda de niveles">
-                <li><span class="chip chip--diario">Uso a diario</span></li>
-                <li><span class="chip">Con experiencia</span></li>
-                <li><span class="chip chip--aprendo">Aprendiendo</span></li>
-            </ul>
+            <header class="exp-intro">
+                <h1>Habilidades y experiencia</h1>
+                <p class="exp-intro__lead">
+                    Vengo de la biotecnología y me formé como desarrolladora Full Stack.
+                    Estas son las herramientas que uso, con evidencia de dónde las apliqué.
+                    Incluyo testing en mi flujo de trabajo: Jest en JavaScript, JUnit en Java
+                </p>
+            </header>
 
-            <section class="grupo" aria-labelledby="t-web">
-                <h2 id="t-web">Tecnologías web & lenguajes</h2>
-                <ul class="chips">
-                    <li class="chip">Java</li>
-                    <li class="chip">JavaScript</li>
-                    <li class="chip">SQL</li>
-                    <li class="chip chip--diario">HTML5 + Bootstrap</li>
-                    <li class="chip">CSS3</li>
-                    <li class="chip">Análisis de datos con R</li>
-                    <li class="chip chip--aprendo">Spring Boot</li>
-                    <li class="chip chip--aprendo">React</li>
-                   
+            <!-- Bloque 1: Uso diario -->
+            <section class="exp-grupo" aria-labelledby="t-diario">
+                <div class="exp-grupo__header">
+                    <span class="exp-grupo__badge exp-grupo__badge--diario">Uso a diario</span>
+                    <h2 id="t-diario">Lo que toco todos los días</h2>
+                    <p class="exp-grupo__desc">
+                        Herramientas con las que trabajo de forma continua y en las que me siento cómoda.
+                    </p>
+                </div>
+
+                <ul class="exp-lista">
+                    <li class="exp-item">
+                        <i class="bi bi-filetype-html exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>HTML5 + Bootstrap</h3>
+                            <p>Maquetación accesible y responsiva en los tres proyectos de mi portafolio.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-git exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Git y GitHub</h3>
+                            <p>Control de versiones en equipo: ramas, merges y resolución de conflictos en el hackathon
+                                de Tierra Deportiva.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-code-square exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>VS Code</h3>
+                            <p>Mi entorno principal, con extensiones para HTML, CSS, JavaScript y Jest.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-chat-dots exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Comunicación entre equipos</h3>
+                            <p>4 años traduciendo entre áreas técnicas y no técnicas en una startup agrotech.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-terminal exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Linux y línea de comandos</h3>
+                            <p>Análisis genómico sobre supercomputadora durante mi maestría; hoy base de mi flujo con
+                                Git.</p>
+                        </div>
+                    </li>
                 </ul>
             </section>
 
-            <section class="grupo" aria-labelledby="t-herr">
-                <h2 id="t-herr">Herramientas & entornos</h2>
-                <ul class="chips">
-                    <li class="chip chip--diario">Git y GitHub</li>
-                    <li class="chip">ThingsBoard</li>
-                    <li class="chip chip--aprendo">Postman</li>
-                    <li class="chip">Figma</li>
-                    <li class="chip chip--diario">VS Code</li>
-                    <li class="chip">IntelliJ IDEA</li>
-                    <li class="chip">Jest</li>
-                    <li class="chip">Línea de comandos</li>
+            <!-- Bloque 2: Con experiencia -->
+            <section class="exp-grupo" aria-labelledby="t-exp">
+                <div class="exp-grupo__header">
+                    <span class="exp-grupo__badge">Con experiencia</span>
+                    <h2 id="t-exp">Con lo que he trabajado</h2>
+                    <p class="exp-grupo__desc">
+                        Tecnologías que he usado en proyectos reales, con margen para seguir profundizando.
+                    </p>
+                </div>
+
+                <ul class="exp-lista">
+                    <li class="exp-item">
+                        <i class="bi bi-cup-hot exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Java</h3>
+                            <p>Backend en formación para Sketch &amp; Coffee, con foco en APIs REST y acceso a datos.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-braces exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>JavaScript</h3>
+                            <p>Interactividad y modales en Neme y Tierra Deportiva; validaciones de formularios con
+                                pruebas en Jest.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-database exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>SQL</h3>
+                            <p>Consultas y modelado básico para proyectos de datos ambientales en mi etapa agrotech.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-palette exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>CSS3</h3>
+                            <p>Identidad visual, paletas y layouts responsivos en los tres proyectos del portafolio.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-bar-chart-line exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Análisis de datos con R</h3>
+                            <p>Análisis exploratorio y visualización en mi formación como biotecnóloga.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-broadcast exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>ThingsBoard</h3>
+                            <p>Diseño de dashboards de monitoreo ambiental para usuarios sin perfil técnico.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-vector-pen exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Figma</h3>
+                            <p>Prototipado de secciones (Contacto y Acerca de) que sirvieron de guía al equipo de
+                                frontend.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-lightbulb exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>IntelliJ IDEA</h3>
+                            <p>Entorno para desarrollo Java en el backend de Sketch &amp; Coffee.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-check2-square exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Jest</h3>
+                            <p>Pruebas unitarias para validaciones de formularios en Sketch &amp; Coffee.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-bug exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>JUnit</h3>
+                            <p>Pruebas unitarias para el backend Java de Sketch &amp; Coffee, en paralelo al desarrollo
+                                con Spring Boot.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-cloud exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>NextCloud</h3>
+                            <p>Sistema de control documental implementado en Kuturabi para trazabilidad de proyectos.
+                            </p>
+                        </div>
+                    </li>
                 </ul>
             </section>
 
-            <section class="grupo" aria-labelledby="t-pro">
-                <h2 id="t-pro">Habilidades profesionales</h2>
-                <ul class="chips">
-                    <li class="chip">Coordinación de proyectos</li>
-                    <li class="chip">Inglés B2</li>
-                    <li class="chip">Documentación y trazabilidad</li>
-                    <li class="chip chip--diario">Comunicación entre equipos</li>
-                    <li class="chip">Método científico y análisis de datos</li>                    
+            <!-- Bloque 3: Aprendiendo -->
+            <section class="exp-grupo" aria-labelledby="t-aprendo">
+                <div class="exp-grupo__header">
+                    <span class="exp-grupo__badge exp-grupo__badge--aprendo">Aprendiendo ahora</span>
+                    <h2 id="t-aprendo">Lo que estoy incorporando</h2>
+                    <p class="exp-grupo__desc">
+                        Tecnologías en las que estoy invirtiendo tiempo activamente. Transparencia total.
+                    </p>
+                </div>
+
+                <ul class="exp-lista">
+                    <li class="exp-item">
+                        <i class="bi bi-leaf exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Spring Boot</h3>
+                            <p>Construcción de APIs REST para el backend de Sketch &amp; Coffee.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-atom exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>React</h3>
+                            <p>Componentes reutilizables y estado. Siguiente paso tras consolidar JavaScript.</p>
+                        </div>
+                    </li>
+                    <li class="exp-item">
+                        <i class="bi bi-send exp-item__icono" aria-hidden="true"></i>
+                        <div class="exp-item__contenido">
+                            <h3>Postman</h3>
+                            <p>Pruebas de endpoints en el desarrollo del backend.</p>
+                        </div>
+                    </li>
                 </ul>
             </section>
+
+            <!-- Habilidades transversales -->
+            <section class="exp-grupo" aria-labelledby="t-trans">
+                <div class="exp-grupo__header">
+                    <h2 id="t-trans">Habilidades transversales</h2>
+                    <p class="exp-grupo__desc">
+                        Lo que traigo de mi etapa coordinando proyectos de ciencia y tecnología.
+                    </p>
+                </div>
+
+                <ul class="exp-transversal">
+                    <li>
+                        <strong>Project ownership sostenido.</strong>
+                        Llevé una planta piloto de principio a fin: año y medio de ejecución técnica más un año de
+                        trámites y cierre. Alcance, proveedores, presupuesto y entregables bajo mi coordinación.
+                    </li>
+                    <li>
+                        <strong>Producto técnico con clientes reales.</strong>
+                        En paralelo, gestioné dispositivos de monitoreo ambiental en tres frentes: venta, soporte
+                        técnico y desarrollo de nuevos prototipos.
+                    </li>
+                    <li>
+                        <strong>Datos para IA.</strong>
+                        Más de 2 años evaluando calidad, curando y recolectando datos para LLMs y robótica (RWS, Scale
+                        AI, Outlier). Especializada en español.
+                    </li>
+                    <li>
+                        <strong>Cómputo científico aplicado.</strong>
+                        Análisis genómico en Linux sobre supercomputadora institucional durante mi maestría en Biología
+                        Integrativa.
+                    </li>
+                    <li>
+                        <strong>Scrum aplicado.</strong>
+                        Roté entre Scrum Master y Product Owner en un equipo de 7 durante 8 semanas (bootcamp),
+                        coordinando un proyecto full stack real.
+                    </li>
+                    <li>
+                        <strong>Método científico aplicado al código.</strong>
+                        Formulo hipótesis, pruebo, mido e itero.
+                    </li>
+                    <li>
+                        <strong>Inglés B2.</strong>
+                        Lectura técnica, documentación y comunicación escrita.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Bloque 4: Trayectoria -->
+            <section class="exp-grupo" aria-labelledby="t-trayectoria">
+                <div class="exp-grupo__header">
+                    <h2 id="t-trayectoria">Trayectoria</h2>
+                    <p class="exp-grupo__desc">
+                        El resumen de dónde vengo. El detalle completo está en el CV.
+                    </p>
+                </div>
+
+                <ul class="exp-trayectoria">
+                    <li>
+                        <span class="exp-trayectoria__periodo">2022 – 2026</span>
+                        <div>
+                            <strong>Coordinación de proyectos en IoT ambiental · Kuturabi</strong>
+                            <p>4 años en una startup agrotech. Llevé una planta piloto de principio a fin (2.5 años) y
+                                gestioné dispositivos de monitoreo: venta, soporte técnico y nuevos prototipos.
+                                Dashboards en ThingsBoard y reportes en R.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="exp-trayectoria__periodo">2024 – 2026</span>
+                        <div>
+                            <strong>Datos para IA · RWS, Scale AI y Outlier</strong>
+                            <p>2+ años evaluando calidad, curando y recolectando datos para LLMs y robótica.
+                                Especializada en contenido en español y verificación de licencias CC 4.0.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="exp-trayectoria__periodo">Formación</span>
+                        <div>
+                            <strong>Biotecnología + Biología + Desarrollo Full Stack</strong>
+                            <p>Maestría en Ciencias en Biología Integrativa (CINVESTAV), con análisis genómico en Linux
+                                sobre supercomputadora institucional. Bootcamp Java Full Stack (Generation México).</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+
+            <!-- CTA de cierre -->
+            <div class="exp-cta">
+                <a class="boton" href="./proyectos.html">Ver proyectos donde lo apliqué</a>
+                <a class="boton boton--secundario" href="./docs/CV-Lizeth-Dorantes.pdf" download>Descargar CV</a>
+            </div>
+
         </div>
     </main>
 
@@ -75,7 +315,10 @@
         <p>Lizeth Dorantes &copy; 2026. Escríbeme a <a href="mailto:lzethdg@gmail.com">lzethdg@gmail.com</a></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="./js/main.js" type="module"></script>
 </body>
+
 </html>

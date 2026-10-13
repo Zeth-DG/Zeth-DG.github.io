@@ -1,14 +1,14 @@
 /* ===== Tokens ===== */
 :root {
-  --fondo: #EDF1E6;
-  --superficie: #F9FBF5;
-  --tinta: #1F3D2E;
-  --hoja: #4F8A5B;
-  --enlace: #2F6B3F;
-  --flor: #8B4A7A;
-  --tierra: #3D3028;
-  --tierra-texto: #F4EBE1;
-  --linea: #C9D4BC;
+  --fondo:        #F4EFE4;  /* papel de herbario */
+  --superficie:   #FBF8F1;  /* ficha limpia */
+  --tinta:        #2A3B2E;  /* verde bosque profundo */
+  --hoja:         #6B8E5A;  /* verde salvia */
+  --enlace:       #4A6B3A;  /* verde tallo */
+  --flor:         #A8574A;  /* terracota seca (acento) */
+  --tierra:       #2E241C;  /* nogal */
+  --tierra-texto: #F4EFE4;
+  --linea:        #D9CFBC;  /* lino */
 
   /* Mapeo para compatibilidad con el header global */
   --color-fondo-claro: var(--superficie);
@@ -319,63 +319,405 @@ button.boton {
   justify-content: flex-start;
 }
 
-/* ===== Habilidades y Chips ===== */
-.grupo {
-  margin-bottom: 2.5rem;
-  width: 100%;
+/* ===== Página de Experiencia ===== */
+.exp-intro {
+  margin-bottom: 3rem;
 }
 
-.chips {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 0.75rem;
-  justify-content: center;
+.exp-intro__lead {
+  max-width: 55ch;
+  font-size: 1.1rem;
+  color: var(--tinta);
+  opacity: 0.85;
 }
 
-.chip {
-  padding: 0.25rem 0.9rem;
+.exp-grupo {
+  margin-bottom: 3.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.exp-grupo:last-of-type {
+  border-bottom: none;
+}
+
+.exp-grupo__header {
+  margin-bottom: 1.75rem;
+}
+
+.exp-grupo__badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.85rem;
   border-radius: 999px;
-  border: 2px solid var(--tinta);
+  border: 1.5px solid var(--tinta);
+  color: var(--tinta);
   background: transparent;
+  margin-bottom: 0.75rem;
 }
 
-.chip--diario {
+.exp-grupo__badge--diario {
   background: var(--tinta);
   color: var(--superficie);
 }
 
-.chip--aprendo {
+.exp-grupo__badge--aprendo {
   border-style: dashed;
   border-color: var(--flor);
+  color: var(--flor);
 }
 
-.leyenda {
+.exp-grupo__desc {
+  max-width: 60ch;
+  color: var(--tinta);
+  opacity: 0.75;
+  margin: 0.5rem 0 0;
+}
+
+/* Lista de habilidades tipo ficha */
+.exp-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 1rem;
+}
+
+.exp-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 0 1.25rem 0 1.25rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.exp-item:hover {
+  border-color: var(--hoja);
+  transform: translateY(-2px);
+}
+
+.exp-item__icono {
+  font-size: 1.5rem;
+  color: var(--hoja);
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 0.15rem;
+}
+
+.exp-item__contenido {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-item__contenido h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.25rem;
+}
+
+.exp-item__contenido p {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--tinta);
+  opacity: 0.8;
+  max-width: none;
+}
+
+/* Habilidades transversales */
+.exp-transversal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.25rem;
+}
+
+.exp-transversal li {
+  padding: 1rem 1.25rem;
+  background: var(--superficie);
+  border-left: 3px solid var(--hoja);
+  border-radius: 0 0.75rem 0.75rem 0;
+  font-size: 0.98rem;
+  max-width: none;
+}
+
+.exp-transversal strong {
+  display: block;
+  color: var(--tinta);
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 1.05rem;
+  margin-bottom: 0.15rem;
+}
+
+/* ===== Trayectoria compacta ===== */
+.exp-trayectoria {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.exp-trayectoria li {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--linea);
+  max-width: none;
+}
+
+.exp-trayectoria li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.exp-trayectoria__periodo {
+  font-family: var(--fuente-titulo);
+  color: var(--hoja);
+  font-size: 0.95rem;
+  padding-top: 0.15rem;
+}
+
+.exp-trayectoria strong {
+  display: block;
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--tinta);
+  margin-bottom: 0.25rem;
+}
+
+.exp-trayectoria p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--tinta);
+  opacity: 0.8;
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+  .exp-trayectoria li {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .exp-trayectoria__periodo {
+    font-size: 0.85rem;
+  }
+}
+
+/* CTA final */
+.exp-cta {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  font-size: 0.95rem;
-  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Motion */
+@media (prefers-reduced-motion: reduce) {
+  .exp-item {
+    transition: none;
+  }
+  .exp-item:hover {
+    transform: none;
+  }
+}
+
+/* Móvil */
+@media (max-width: 640px) {
+  .exp-lista,
+  .exp-transversal {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-cta {
+    flex-direction: column;
+  }
+
+  .exp-cta .boton {
+    text-align: center;
+  }
 }
 
 /* ===== Página de Proyectos ===== */
-#mainCont.hero {
-  align-items: flex-start;
-  text-align: left;
+/* ===== Página de proyectos: timeline ===== */
+.proyectos-main {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 5rem 1.25rem 4rem;
+  min-height: calc(100vh - 4.5rem);
 }
 
-#mainCont.hero h1 {
-  text-align: left;
+.proyectos-intro {
+  max-width: 60ch;
+  margin-bottom: 3.5rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 5.5rem;
+  width: 2px;
+  background: var(--linea);
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline__item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline__marcador {
+  position: relative;
+  text-align: right;
+  padding-right: 0.5rem;
+  padding-top: 0.35rem;
+}
+
+.timeline__marcador::after {
+  content: "";
+  position: absolute;
+  right: -0.75rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--superficie);
+  border: 3px solid var(--hoja);
+  z-index: 1;
+}
+
+.timeline__fecha {
+  font-family: var(--fuente-titulo);
+  font-size: 0.9rem;
+  color: var(--hoja);
+  line-height: 1.3;
+}
+
+.timeline__contenido {
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: 0 1.5rem 0 1.5rem;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2rem;
+  align-items: center;
+  transition: border-color 0.2s ease;
+}
+
+.timeline__contenido:hover {
+  border-color: var(--hoja);
+}
+
+.timeline__imagen {
+  border-radius: 0 1rem 0 1rem;
+  overflow: hidden;
+  background: var(--fondo);
+  padding: 1rem;
+}
+
+.timeline__imagen img {
   width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0 0.75rem 0 0.75rem;
 }
 
-#mainCont.hero p {
-  text-align: left;
-  margin-left: 0;
+.timeline__texto h2 {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  margin: 0.5rem 0 0.6rem;
+}
+
+.timeline__texto p {
+  margin: 0 0 0.85rem;
+  max-width: none;
+  font-size: 0.98rem;
+  color: var(--tinta);
+  opacity: 0.85;
+}
+
+.timeline__texto .boton {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline__texto .boton i {
+  transition: transform 0.2s ease;
+}
+
+.timeline__texto .boton:hover i {
+  transform: translateX(4px);
+}
+
+/* Móvil y tablet */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 0.5rem;
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr;
+    padding-left: 2.25rem;
+    gap: 0.85rem;
+  }
+
+  .timeline__marcador {
+    text-align: left;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .timeline__marcador::after {
+    left: -2.15rem;
+    right: auto;
+    top: 0.3rem;
+  }
+
+  .timeline__contenido {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__contenido,
+  .timeline__texto .boton i {
+    transition: none;
+  }
+  .timeline__texto .boton:hover i {
+    transform: none;
+  }
 }
 
 /* ===== Modales ===== */
@@ -451,9 +793,134 @@ button.boton {
   color: var(--superficie);
 }
 
+/* ===== Tarjetas destacadas con jerarquía ===== */
+/* Va al final del archivo a propósito: necesita ganar la cascada
+   sobre .tarjetas y .tarjeta genéricos. */
+
+.tarjetas.tarjetas--destacadas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* La featured ocupa las 2 columnas y se vuelve un grid interno */
+.tarjetas--destacadas .tarjeta--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 0;
+  flex-direction: row;   /* neutraliza el flex-direction: column del .tarjeta genérico */
+}
+
+.tarjetas--destacadas .tarjeta--featured img {
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+  aspect-ratio: auto;     /* sobreescribe el 16/10 genérico */
+  object-fit: cover;
+}
+
+.tarjetas--destacadas .tarjeta--featured .tarjeta-cuerpo {
+  padding: 2.25rem 2.5rem;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.tarjetas--destacadas .tarjeta--featured h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.tarjetas--destacadas .tarjeta--featured p {
+  font-size: 1.0625rem;
+}
+
+.tarjetas--destacadas .tarjeta--featured .tarjeta-enlaces {
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.tarjetas--destacadas .tarjeta--featured .boton {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+/* Tablet: la featured pasa a vertical (imagen arriba, texto abajo) */
+@media (max-width: 992px) {
+  .tarjetas--destacadas .tarjeta--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjetas--destacadas .tarjeta--featured img {
+    min-height: 16rem;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Móvil: todo a una columna */
+@media (max-width: 768px) {
+  .tarjetas.tarjetas--destacadas {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjetas--destacadas .tarjeta--featured .tarjeta-cuerpo {
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+
+  .tarjetas--destacadas .tarjeta--featured img {
+    min-height: 14rem;
+    aspect-ratio: 16 / 10;
+  }
+}
+
 /* ===== Motion preferences ===== */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* ===== CTA de cierre de sección ===== */
+.seccion-cta {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.boton--secundario {
+  background: transparent;
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boton--secundario:hover {
+  background: var(--tinta);
+  color: var(--superficie);
+}
+
+.boton--secundario i {
+  transition: transform 0.2s ease;
+}
+
+.boton--secundario:hover i {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boton--secundario i {
+    transition: none;
+  }
+  .boton--secundario:hover i {
+    transform: none;
+  }
+}
+
+/* Evita el flash de scroll cuando se entra con un hash de modal */
+html.modal-hash-pendiente {
+  scroll-behavior: auto;
 }

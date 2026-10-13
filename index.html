@@ -1,20 +1,24 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lizeth Dorantes | Desarrolladora Full Stack</title>
 
-    <meta name="description" content="Portafolio de Lizeth Dorantes, desarrolladora Java Full Stack Jr. con experiencia en datos ambientales e IoT.">
+    <meta name="description"
+        content="Portafolio de Lizeth Dorantes, desarrolladora Java Full Stack Jr. con experiencia en datos ambientales e IoT.">
     <meta property="og:title" content="Lizeth Dorantes | Desarrolladora Full Stack">
     <meta property="og:description" content="Software que hace legibles los datos del mundo vivo.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -27,15 +31,17 @@
         <section class="hero">
             <div id="colCont">
                 <h1>¡Hola! Mi nombre es Lizeth Dorantes:</h1>
-                <h2>Desarrolladora Full Stack (Java)</h2>
-                <h3>Con experiencia en datos ambientales e IoT.</h3>
-                <h3>Desarrollo aplicaciones web claras, útiles y fáciles de usar.</h3>
+                <h2>Desarrolladora Full Stack · IoT ambiental</h2>
+                <h3>Datos que se entienden.<br>Software que se usa.</h3>
 
                 <nav class="enlaces" aria-label="Enlaces principales">
-                    <a href="#about" aria-label="Acerca de mí"><i class="bi bi-emoji-smile-fill" aria-hidden="true"></i></a>
+                    <a href="#about" aria-label="Acerca de mí"><i class="bi bi-emoji-smile-fill"
+                            aria-hidden="true"></i></a>
                     <a href="#destacados" aria-label="Proyectos"><i class="bi bi-folder" aria-hidden="true"></i></a>
-                    <a href="https://github.com/Zeth-DG" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/lizeth-dorantes/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://github.com/Zeth-DG" aria-label="GitHub" target="_blank"
+                        rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/in/lizeth-dorantes/" aria-label="LinkedIn" target="_blank"
+                        rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
                 </nav>
             </div>
         </section>
@@ -45,63 +51,103 @@
         <!-- Proyectos destacados -->
         <section id="destacados" class="seccion" aria-labelledby="t-destacados">
             <h2 id="t-destacados">Proyectos destacados</h2>
-            <div class="tarjetas">
-                <article class="tarjeta">
-                    <img src="./images/sketch-and-coffee.png" alt="Captura index de Sketch &amp; Coffee" width="640" height="400" loading="lazy">
+
+            <div class="tarjetas tarjetas--destacadas">
+                <!-- Sketch & Coffee: proyecto principal -->
+                <article class="tarjeta tarjeta--featured">
+                    <img src="./images/sketch-and-coffee.png" alt="Captura index de Sketch &amp; Coffee" width="640"
+                        height="400" loading="lazy">
                     <div class="tarjeta-cuerpo">
                         <span class="etiqueta etiqueta--proceso">En proceso</span>
                         <h3>Sketch &amp; Coffee</h3>
-                        <p>Tienda en línea. Frontend funcional, backend en desarrollo.</p>
+                        <p>Tienda en línea para una cafetería con identidad 2D. Frontend funcional con validaciones
+                            probadas en Jest, backend en desarrollo. Coordiné al equipo rotando entre Scrum Master y
+                            Product Owner durante 8 semanas.</p>
+                        <p class="text-muted small"><strong>Stack:</strong> HTML, CSS, JavaScript, Bootstrap, Jest,
+                            Figma</p>
                         <div class="tarjeta-enlaces">
-                            <a href="./proyectos.html#modal-sketch">Ver detalle</a>
+                            <a class="boton" href="./proyectos.html#modal-sketch">Ver detalle</a>
                         </div>
                     </div>
                 </article>
 
+                <!-- Neme -->
                 <article class="tarjeta">
-                    <img src="./images/neme.png" alt="Captura de la landing page Neme" width="640" height="400" loading="lazy">
+                    <img src="./images/neme.png" alt="Captura de la landing page Neme" width="640" height="400"
+                        loading="lazy">
                     <div class="tarjeta-cuerpo">
-                        <span class="etiqueta">Individual</span>
+                        <span class="etiqueta etiqueta--terminada">Terminado</span>
                         <h3>Neme</h3>
-                        <p>Landing page responsiva para una tienda de ropa deportiva, hecha en una semana.</p>
+                        <p>Landing page responsiva para una tienda de ropa deportiva donde la comodidad es lo más
+                            importante.</p>
                         <div class="tarjeta-enlaces">
-                            <a href="./proyectos.html#tarjeta-neme">Ver detalle</a>
+                            <a href="./proyectos.html#modal-neme">Ver detalle</a>
                         </div>
                     </div>
                 </article>
 
+                <!-- Tierra Deportiva -->
                 <article class="tarjeta">
-                    <img src="./images/tierra-deportiva.png" alt="Captura de la landing page Tierra Deportiva" width="640" height="400" loading="lazy">
+                    <img src="./images/tierra-deportiva.png" alt="Captura de la landing page Tierra Deportiva"
+                        width="640" height="400" loading="lazy">
                     <div class="tarjeta-cuerpo">
-                        <span class="etiqueta">Equipo</span>
+                        <span class="etiqueta etiqueta--terminada">Terminado</span>
                         <h3>Tierra Deportiva</h3>
-                        <p>Landing page interactiva creada en equipo en un hackathon.</p>
+                        <p>Landing page interactiva creada en equipo durante un hackathon.</p>
                         <div class="tarjeta-enlaces">
-                            <a href="./proyectos.html#tarjeta-tierraD">Ver detalle</a>
+                            <a href="./proyectos.html#modal-tierra-deportiva">Ver detalle</a>
                         </div>
                     </div>
                 </article>
             </div>
-            <p><a href="./proyectos.html">Ver todos los proyectos y detalles</a></p>
+
+            <div class="seccion-cta">
+                <a class="boton boton--secundario" href="./proyectos.html">
+                    Ver todos los proyectos
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
         </section>
-        
+
         <div class="separador" role="presentation"></div>
+
 
         <!-- Pantalla 3: Acerca de mí -->
         <section id="about" class="about" aria-labelledby="t-about">
             <div class="about-contenido">
                 <div class="about-texto">
                     <h2 id="t-about">Acerca de mí</h2>
-                    <p>Soy Zeth, desarrolladora Java Full Stack Jr. Me gusta resolver problemas con tecnología. Tengo 4 años de experiencia coordinando proyectos en IoT ambiental, y vengo de la ciencia, así que me gusta entender cómo funcionan las cosas.</p>
-                    <p>Esto es lo que aporto:</p>
+
+                    <p>Vengo de la biotecnología y hoy escribo software. Esa mezcla es mi ventaja: <strong>traduzco
+                            datos complejos en decisiones que se entienden</strong>.</p>
+
+                    <p>Durante 4 años coordiné proyectos de IoT ambiental en una startup agrotech. Diseñé dashboards con
+                        ThingsBoard que hoy leen personas sin perfil técnico, y aprendí que un dato solo sirve si
+                        alguien puede actuar sobre él.</p>
+
+                    <p>Por eso programo pensando en quien va a usar lo que construyo: Java y JavaScript en el backend,
+                        HTML/CSS/Bootstrap en el frontend, SQL para los datos, Git para el trabajo en equipo.</p>
+
+                    <h3>Lo que aporto a un equipo</h3>
                     <ul>
-                        <li><strong>Desarrollo Full Stack:</strong> Java, JavaScript, SQL y Git, con gusto por que lo que construyo se vea bien y se entienda fácil.</li>
-                        <li><strong>Datos en tiempo real:</strong> diseñé dashboards de monitoreo ambiental con ThingsBoard, convirtiendo datos complejos en algo que cualquiera pueda leer y usar.</li>
-                        <li><strong>Coordinación de proyectos:</strong> 4 años en una startup de IoT/agrotech, con foco en documentación, trazabilidad y comunicación entre equipos.</li>
-                        <li><strong>Mentalidad científica:</strong> formulo preguntas, reviso evidencia y me apoyo en datos para decidir.</li>
+                        <li><strong>Full Stack con criterio de producto:</strong> no solo implemento features, pregunto
+                            para qué sirven.</li>
+                        <li><strong>Datos en tiempo real:</strong> sé convertir señales de sensores en interfaces
+                            legibles.</li>
+                        <li><strong>Coordinación real:</strong> 4 años documentando, trazando y comunicando entre áreas
+                            técnicas y no técnicas.</li>
+                        <li><strong>Método científico aplicado al código:</strong> formulo hipótesis, pruebo, mido,
+                            itero.</li>
                     </ul>
-                    <p>Fuera del código, me gusta tejer, nadar y andar en bici.</p>
-                    <p>Busco mi primer rol como developer Jr. donde aportar mi experiencia y seguir creciendo.</p>
+
+                    <h3>Lo que busco</h3>
+                    <p>Un equipo donde pueda <strong>crecer como desarrolladora</strong> aportando mi experiencia en
+                        datos, coordinación y diseño de producto. Me interesa especialmente el cruce entre
+                        <strong>software, datos y sostenibilidad</strong>.
+                    </p>
+
+                    <p>Fuera del código: tejo, nado y ando en bici.</p>
+
                     <p><a class="boton" href="./docs/CV-Lizeth-Dorantes.pdf" download>Descargar CV</a></p>
                 </div>
                 <img src="./images/FotoLizethDorantes.jpeg" alt="Retrato de Lizeth Dorantes">
@@ -113,7 +159,10 @@
         <p>Lizeth Dorantes &copy; 2026. Escríbeme a <a href="mailto:lzethdg@gmail.com">lzethdg@gmail.com</a></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="./js/main.js" type="module"></script>
 </body>
+
 </html>
