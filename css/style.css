@@ -1,16 +1,15 @@
 /* ===== Tokens ===== */
 :root {
-  --fondo:        #F4EFE4;  /* papel de herbario */
-  --superficie:   #FBF8F1;  /* ficha limpia */
-  --tinta:        #2A3B2E;  /* verde bosque profundo */
-  --hoja:         #6B8E5A;  /* verde salvia */
-  --enlace:       #4A6B3A;  /* verde tallo */
-  --flor:         #A8574A;  /* terracota seca (acento) */
-  --tierra:       #2E241C;  /* nogal */
+  --fondo: #F4EFE4;
+  --superficie: #FBF8F1;
+  --tinta: #2A3B2E;
+  --hoja: #6B8E5A;
+  --enlace: #4A6B3A;
+  --flor: #A8574A;
+  --tierra: #2E241C;
   --tierra-texto: #F4EFE4;
-  --linea:        #D9CFBC;  /* lino */
+  --linea: #D9CFBC;
 
-  /* Mapeo para compatibilidad con el header global */
   --color-fondo-claro: var(--superficie);
   --color-principal-oscuro: var(--tinta);
   --color-borde-suave: var(--linea);
@@ -37,7 +36,10 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--fuente-titulo);
   font-weight: 400;
   line-height: 1.2;
@@ -56,7 +58,8 @@ h3 {
   font-size: 1.15rem;
 }
 
-p, li {
+p,
+li {
   max-width: 65ch;
 }
 
@@ -98,6 +101,28 @@ button.boton {
   color: var(--superficie);
 }
 
+.boton--secundario {
+  background: transparent;
+  color: var(--tinta);
+  border: 2px solid var(--tinta);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boton--secundario:hover {
+  background: var(--tinta);
+  color: var(--superficie);
+}
+
+.boton--secundario i {
+  transition: transform 0.2s ease;
+}
+
+.boton--secundario:hover i {
+  transform: translateX(4px);
+}
+
 /* ===== Header Sticky ===== */
 .site-header {
   position: sticky;
@@ -134,7 +159,7 @@ button.boton {
   color: var(--hoja);
 }
 
-/* ===== Hero ===== */
+/* ===== Hero (Home) ===== */
 .hero,
 .seccion {
   max-width: 68rem;
@@ -160,7 +185,6 @@ button.boton {
   text-align: center;
 }
 
-/* Enlaces del Hero centrados y grandes */
 .hero .enlaces {
   display: flex;
   gap: 1.5rem;
@@ -216,7 +240,7 @@ button.boton {
   }
 }
 
-/* ===== Tarjetas de proyecto ===== */
+/* ===== Tarjetas de proyecto (Home) ===== */
 .tarjetas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -255,7 +279,6 @@ button.boton {
   text-align: left;
 }
 
-/* Centrar los enlaces y botones dentro de las tarjetas */
 .tarjeta-enlaces {
   margin-top: auto;
   display: flex;
@@ -269,7 +292,7 @@ button.boton {
   margin-top: 0.5rem;
 }
 
-/* ===== Etiquetas de Proyectos ===== */
+/* ===== Etiquetas ===== */
 .etiqueta {
   align-self: flex-start;
   font-size: 0.85rem;
@@ -296,7 +319,7 @@ button.boton {
   background-color: rgba(79, 138, 91, 0.04);
 }
 
-/* ===== Sección alineada a izquierda ===== */
+/* ===== Sección alineada a izquierda (Experiencia) ===== */
 .seccion-alineada-izquierda {
   max-width: 68rem;
   margin: 0 auto;
@@ -377,7 +400,6 @@ button.boton {
   margin: 0.5rem 0 0;
 }
 
-/* Lista de habilidades tipo ficha */
 .exp-lista {
   list-style: none;
   padding: 0;
@@ -395,6 +417,7 @@ button.boton {
   border: 1px solid var(--linea);
   border-radius: 0 1.25rem 0 1.25rem;
   transition: border-color 0.2s ease, transform 0.2s ease;
+  max-width: none;
 }
 
 .exp-item:hover {
@@ -428,7 +451,6 @@ button.boton {
   max-width: none;
 }
 
-/* Habilidades transversales */
 .exp-transversal {
   list-style: none;
   padding: 0;
@@ -456,7 +478,7 @@ button.boton {
   margin-bottom: 0.15rem;
 }
 
-/* ===== Trayectoria compacta ===== */
+/* ===== Trayectoria (Experiencia) ===== */
 .exp-trayectoria {
   list-style: none;
   padding: 0;
@@ -504,6 +526,13 @@ button.boton {
   max-width: none;
 }
 
+.exp-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
 @media (max-width: 640px) {
   .exp-trayectoria li {
     grid-template-columns: 1fr;
@@ -513,28 +542,7 @@ button.boton {
   .exp-trayectoria__periodo {
     font-size: 0.85rem;
   }
-}
 
-/* CTA final */
-.exp-cta {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-/* Motion */
-@media (prefers-reduced-motion: reduce) {
-  .exp-item {
-    transition: none;
-  }
-  .exp-item:hover {
-    transform: none;
-  }
-}
-
-/* Móvil */
-@media (max-width: 640px) {
   .exp-lista,
   .exp-transversal {
     grid-template-columns: 1fr;
@@ -549,13 +557,18 @@ button.boton {
   }
 }
 
-/* ===== Página de Proyectos ===== */
 /* ===== Página de proyectos: timeline ===== */
 .proyectos-main {
-  max-width: 68rem;
+  width: 100%;
+  max-width: 90rem;
   margin: 0 auto;
-  padding: 5rem 1.25rem 4rem;
+  padding: 5rem 2rem 4rem;
   min-height: calc(100vh - 4.5rem);
+}
+
+.proyectos-main>.w-100 {
+  width: 100% !important;
+  max-width: none;
 }
 
 .proyectos-intro {
@@ -570,6 +583,8 @@ button.boton {
   padding: 0;
   margin: 0;
   position: relative;
+  width: 100%;
+  max-width: none;
 }
 
 .timeline::before {
@@ -577,17 +592,20 @@ button.boton {
   position: absolute;
   top: 1rem;
   bottom: 1rem;
-  left: 5.5rem;
+  left: 5rem;
   width: 2px;
   background: var(--linea);
 }
 
 .timeline__item {
   display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 5rem 1fr;
+  gap: 2rem;
   margin-bottom: 3rem;
   position: relative;
+  width: 100%;
+  max-width: none;
+  /* ← EL FIX: sobreescribe el max-width: 65ch global */
 }
 
 .timeline__item:last-child {
@@ -601,11 +619,18 @@ button.boton {
   padding-top: 0.35rem;
 }
 
+.timeline__marcador {
+  position: relative;
+  text-align: right;         /* fecha pegada a la derecha */
+  padding-right: 1.25rem;    /* espacio para el punto */
+  padding-top: 0.35rem;
+}
+
 .timeline__marcador::after {
   content: "";
   position: absolute;
-  right: -0.75rem;
-  top: 0.5rem;
+  right: -0.5rem;            /* el punto sale por la derecha */
+  top: 0.55rem;              /* alineado verticalmente con la fecha */
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
@@ -614,23 +639,19 @@ button.boton {
   z-index: 1;
 }
 
-.timeline__fecha {
-  font-family: var(--fuente-titulo);
-  font-size: 0.9rem;
-  color: var(--hoja);
-  line-height: 1.3;
-}
-
 .timeline__contenido {
   background: var(--superficie);
   border: 1px solid var(--linea);
   border-radius: 0 1.5rem 0 1.5rem;
   padding: 1.75rem;
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
   transition: border-color 0.2s ease;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
 }
 
 .timeline__contenido:hover {
@@ -641,7 +662,8 @@ button.boton {
   border-radius: 0 1rem 0 1rem;
   overflow: hidden;
   background: var(--fondo);
-  padding: 1rem;
+  padding: 0.75rem;
+  min-width: 0;
 }
 
 .timeline__imagen img {
@@ -649,6 +671,11 @@ button.boton {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 0 0.75rem 0 0.75rem;
+  display: block;
+}
+
+.timeline__texto {
+  min-width: 0;
 }
 
 .timeline__texto h2 {
@@ -679,8 +706,37 @@ button.boton {
   transform: translateX(4px);
 }
 
-/* Móvil y tablet */
-@media (max-width: 768px) {
+/* Stack dentro de las tarjetas de la timeline */
+.tarjeta-stack {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--tinta);
+  opacity: 0.7;
+}
+
+.tarjeta-stack li {
+  position: relative;
+  max-width: none;
+}
+
+.tarjeta-stack li:not(:last-child)::after {
+  content: "·";
+  position: absolute;
+  right: -0.5rem;
+  opacity: 0.6;
+}
+
+/* Tablet y móvil */
+@media (max-width: 900px) {
+  .proyectos-main {
+    padding: 5rem 1.25rem 4rem;
+  }
+
   .timeline::before {
     left: 0.5rem;
   }
@@ -703,20 +759,14 @@ button.boton {
     top: 0.3rem;
   }
 
+  .timeline__fecha {
+    white-space: normal;
+  }
+
   .timeline__contenido {
     grid-template-columns: 1fr;
     padding: 1.25rem;
     gap: 1.25rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .timeline__contenido,
-  .timeline__texto .boton i {
-    transition: none;
-  }
-  .timeline__texto .boton:hover i {
-    transform: none;
   }
 }
 
@@ -793,10 +843,7 @@ button.boton {
   color: var(--superficie);
 }
 
-/* ===== Tarjetas destacadas con jerarquía ===== */
-/* Va al final del archivo a propósito: necesita ganar la cascada
-   sobre .tarjetas y .tarjeta genéricos. */
-
+/* ===== Tarjetas destacadas (Home) ===== */
 .tarjetas.tarjetas--destacadas {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -805,20 +852,19 @@ button.boton {
   width: 100%;
 }
 
-/* La featured ocupa las 2 columnas y se vuelve un grid interno */
 .tarjetas--destacadas .tarjeta--featured {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 0;
-  flex-direction: row;   /* neutraliza el flex-direction: column del .tarjeta genérico */
+  flex-direction: row;
 }
 
 .tarjetas--destacadas .tarjeta--featured img {
   width: 100%;
   height: 100%;
   min-height: 22rem;
-  aspect-ratio: auto;     /* sobreescribe el 16/10 genérico */
+  aspect-ratio: auto;
   object-fit: cover;
 }
 
@@ -846,7 +892,6 @@ button.boton {
   margin-top: 0;
 }
 
-/* Tablet: la featured pasa a vertical (imagen arriba, texto abajo) */
 @media (max-width: 992px) {
   .tarjetas--destacadas .tarjeta--featured {
     grid-template-columns: 1fr;
@@ -858,7 +903,6 @@ button.boton {
   }
 }
 
-/* Móvil: todo a una columna */
 @media (max-width: 768px) {
   .tarjetas.tarjetas--destacadas {
     grid-template-columns: 1fr;
@@ -874,14 +918,7 @@ button.boton {
   }
 }
 
-/* ===== Motion preferences ===== */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* ===== CTA de cierre de sección ===== */
+/* ===== CTA de cierre ===== */
 .seccion-cta {
   width: 100%;
   display: flex;
@@ -889,38 +926,30 @@ button.boton {
   margin-top: 2.5rem;
 }
 
-.boton--secundario {
-  background: transparent;
-  color: var(--tinta);
-  border: 2px solid var(--tinta);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+/* ===== Utilidades ===== */
+html.modal-hash-pendiente {
+  scroll-behavior: auto;
 }
 
-.boton--secundario:hover {
-  background: var(--tinta);
-  color: var(--superficie);
-}
-
-.boton--secundario i {
-  transition: transform 0.2s ease;
-}
-
-.boton--secundario:hover i {
-  transform: translateX(4px);
-}
-
+/* ===== Motion preferences ===== */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .exp-item,
+  .timeline__contenido,
+  .timeline__texto .boton i,
   .boton--secundario i {
     transition: none;
   }
+
+  .exp-item:hover {
+    transform: none;
+  }
+
+  .timeline__texto .boton:hover i,
   .boton--secundario:hover i {
     transform: none;
   }
-}
-
-/* Evita el flash de scroll cuando se entra con un hash de modal */
-html.modal-hash-pendiente {
-  scroll-behavior: auto;
 }
