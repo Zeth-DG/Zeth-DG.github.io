@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,122 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lizeth Dorantes | Desarrolladora Full Stack</title>
-
-    <meta name="description"
-        content="Portafolio de Lizeth Dorantes, desarrolladora Java Full Stack Jr. con experiencia en datos ambientales e IoT.">
-    <meta property="og:title" content="Lizeth Dorantes | Desarrolladora Full Stack">
-    <meta property="og:description" content="Software que hace legibles los datos del mundo vivo.">
-
+    <meta name="description" content="Portafolio de Lizeth Dorantes, desarrolladora Java Full Stack Jr.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap"
         rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <header id="header-global" class="site-header"></header>
-
     <main>
-        <!-- Pantalla 1: Presentación -->
-        <section class="hero">
-            <div id="colCont">
-                <h1>¡Hola! Mi nombre es Lizeth Dorantes:</h1>
-                <h2>Desarrolladora Full Stack · IoT ambiental</h2>
-                <h3>Datos que se entienden.<br>Software que se usa.</h3>
-
-                <nav class="enlaces" aria-label="Enlaces principales">
-                    <a href="#about" aria-label="Acerca de mí"><i class="bi bi-emoji-smile-fill"
-                            aria-hidden="true"></i></a>
-                    <a href="#destacados" aria-label="Proyectos"><i class="bi bi-folder" aria-hidden="true"></i></a>
-                    <a href="https://github.com/Zeth-DG" aria-label="GitHub" target="_blank"
-                        rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/lizeth-dorantes/" aria-label="LinkedIn" target="_blank"
-                        rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                </nav>
-            </div>
+        <section class="container hero">
+            <h1>¡Hola! Mi nombre es Lizeth Dorantes:</h1>
+            <h2>Desarrolladora Full Stack · IoT ambiental</h2>
+            <h3>Datos que se entienden.<br>Software que se usa.</h3>
+            <nav class="enlaces" aria-label="Enlaces principales">
+                <a href="#about" aria-label="Acerca de mí"><i class="bi bi-emoji-smile-fill" aria-hidden="true"></i></a>
+                <a href="#destacados" aria-label="Proyectos"><i class="bi bi-folder" aria-hidden="true"></i></a>
+                <a href="https://github.com/Zeth-DG" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i
+                        class="bi bi-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/lizeth-dorantes/" aria-label="LinkedIn" target="_blank"
+                    rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            </nav>
         </section>
 
-        <div class="separador" role="presentation"></div>
-
-        <!-- Proyectos destacados -->
-        <section id="destacados" class="seccion" aria-labelledby="t-destacados">
-            <h2 id="t-destacados">Proyectos destacados</h2>
-
-            <div class="tarjetas tarjetas--destacadas">
-                <!-- Sketch & Coffee: proyecto principal -->
-                <article class="tarjeta tarjeta--featured">
-                    <img src="./images/capturas/sketch-and-coffee-captura.png" alt="Captura index de Sketch &amp; Coffee" width="640"
-                        height="400" loading="lazy">
-                    <div class="tarjeta-cuerpo">
+        <section id="destacados" class="container">
+            <h2 id="t-destacados" style="text-align: center; margin-bottom: 2rem;">Proyectos destacados</h2>
+            <div class="grid-auto">
+                <article class="card card--destacado">
+                    <img src="./images/capturas/sketch-and-coffee-captura.png" alt="Sketch & Coffee"
+                        class="card--destacado__img">
+                    <div class="card--destacado__body">
                         <span class="etiqueta etiqueta--proceso">En proceso</span>
                         <h3>Sketch &amp; Coffee</h3>
                         <p>Tienda en línea para una cafetería con identidad 2D. Frontend funcional con validaciones
-                            probadas en Jest, backend en desarrollo. Coordiné al equipo rotando entre Scrum Master y
-                            Product Owner durante 8 semanas.</p>
-                        <p class="text-muted small"><strong>Stack:</strong> HTML, CSS, JavaScript, Bootstrap, Jest,
-                            Figma</p>
-                        <div class="tarjeta-enlaces">
+                            probadas en Jest.</p>
+                        <div class="card--destacado__accion">
                             <a class="boton" href="./proyectos.html#modal-sketch">Ver detalle</a>
                         </div>
                     </div>
                 </article>
-
-                <!-- Neme -->
-                <article class="tarjeta">
-                    <img src="./images/capturas/neme-captura.png" alt="Captura de la landing page Neme" width="640" height="400"
-                        loading="lazy">
-                    <div class="tarjeta-cuerpo">
+                <article class="card card--destacado">
+                    <img src="./images/capturas/neme-captura.png" alt="Neme" class="card--destacado__img">
+                    <div class="card--destacado__body">
                         <span class="etiqueta etiqueta--terminada">Terminado</span>
                         <h3>Neme</h3>
-                        <p>Landing page responsiva para una tienda de ropa deportiva donde la comodidad es lo más
-                            importante.</p>
-                        <div class="tarjeta-enlaces">
-                            <a href="./proyectos.html#modal-neme">Ver detalle</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tierra Deportiva -->
-                <article class="tarjeta">
-                    <img src="./images/capturas/tierra-deportiva-captura.png" alt="Captura de la landing page Tierra Deportiva"
-                        width="640" height="400" loading="lazy">
-                    <div class="tarjeta-cuerpo">
-                        <span class="etiqueta etiqueta--terminada">Terminado</span>
-                        <h3>Tierra Deportiva</h3>
-                        <p>Landing page interactiva creada en equipo durante un hackathon.</p>
-                        <div class="tarjeta-enlaces">
-                            <a href="./proyectos.html#modal-tierra-deportiva">Ver detalle</a>
+                        <p>Landing page responsiva para una tienda de ropa deportiva.</p>
+                        <div class="card--destacado__accion">
+                            <a class="boton boton--secundario" href="./proyectos.html#modal-neme">Ver detalle</a>
                         </div>
                     </div>
                 </article>
             </div>
-
-            <div class="seccion-cta">
-                <a class="boton boton--secundario" href="./proyectos.html">
-                    Ver todos los proyectos
-                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                </a>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a class="boton boton--secundario" href="./proyectos.html">Ver todos los proyectos <i
+                        class="bi bi-arrow-right"></i></a>
             </div>
         </section>
 
-        <div class="separador" role="presentation"></div>
-
-
-        <!-- Pantalla 3: Acerca de mí -->
-        <section id="about" class="about" aria-labelledby="t-about">
-            <div class="about-contenido">
-                <div class="about-texto">
+        <section id="about" class="container">
+            <div class="about-grid">
+                <div>
                     <h2 id="t-about">Acerca de mí</h2>
-
                     <p>Vengo de la biotecnología y hoy escribo software. Esa mezcla es mi ventaja: <strong>traduzco
                             datos complejos en decisiones que se entienden</strong>.</p>
 
-                    <p>Durante casi 4 años coordiné proyectos de IoT ambiental en una startup agrotech. Diseñé dashboards con
+                    <p>Durante casi 4 años coordiné proyectos de IoT ambiental en una startup agrotech. Diseñé
+                        dashboards con
                         ThingsBoard que hoy leen personas sin perfil técnico, y aprendí que un dato solo sirve si
                         alguien puede actuar sobre él.</p>
 
@@ -134,7 +87,8 @@
                             para qué sirven.</li>
                         <li><strong>Datos en tiempo real:</strong> sé convertir señales de sensores en interfaces
                             legibles.</li>
-                        <li><strong>Coordinación real:</strong> 3 años y 10 meses documentando, trazando y comunicando entre áreas
+                        <li><strong>Coordinación real:</strong> 3 años y 10 meses documentando, trazando y comunicando
+                            entre áreas
                             técnicas y no técnicas.</li>
                         <li><strong>Método científico aplicado al código:</strong> formulo hipótesis, pruebo, mido,
                             itero.</li>
@@ -147,21 +101,16 @@
                     </p>
 
                     <p>Fuera del código: tejo, nado y ando en bici.</p>
-
                     <p><a class="boton" href="./docs/CV-Lizeth-Dorantes.pdf" download>Descargar CV</a></p>
                 </div>
                 <img src="./images/FotoLizethDorantes.jpeg" alt="Retrato de Lizeth Dorantes">
             </div>
         </section>
     </main>
-
     <footer class="pie">
         <p>Lizeth Dorantes &copy; 2026. Escríbeme a <a href="mailto:lzethdg@gmail.com">lzethdg@gmail.com</a></p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
 </body>
 

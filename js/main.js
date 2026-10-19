@@ -1,11 +1,13 @@
 import { cargarHeader } from "./funcionalidades-header.js";
-// import { cargarClima } from "./funcionalidad-tarjeta-clima.js"; // descomenta cuando exista el archivo
+import "./funcionalidad-tarjeta-clima.js"; // Se auto-ejecuta al importarse.
 
+// NOTA: cargarHeader() usa fetch("./componentes/header.html").
+// Requiere servidor local (Live Server, python -m http.server, etc.).
+// Abrir los HTML con file:// no cargará el header.
 cargarHeader();
-// cargarClima();
 
 /* =========================================================
-   1. Apertura de modales por hash en la URL
+   1. Apertura/cierre de modales por hash en la URL
    ========================================================= */
 
 const modalesPorHash = {
@@ -18,55 +20,52 @@ const modalesPorHash = {
 
 function abrirModalDesdeHash() {
   const idModal = modalesPorHash[window.location.hash];
+
+  // Si hay un modal abierto que ya no corresponde al hash actual
+  // (ej. el usuario presionó "atrás"), lo cerramos.
+  const modalAbierto = document.querySelector(".modal.show");
+  if (modalAbierto && (!idModal || modalAbierto.id !== idModal)) {
+    bootstrap.Modal.getOrCreateInstance(modalAbierto).hide();
+    return;
+  }
+
   if (!idModal) return;
 
   const elemento = document.getElementById(idModal);
   if (!elemento) return;
 
-  const modal = bootstrap.Modal.getOrCreateInstance(elemento);
-  modal.show();
-
-  elemento.addEventListener(
-    "hidden.bs.modal",
-    () => {
-      history.replaceState(
-        null,
-        "",
-        window.location.pathname + window.location.search
-      );
-    },
-    { once: true }
-  );
+  bootstrap.Modal.getOrCreateInstance(elemento).show();
 }
 
-/* =========================================================
-   2. Apertura de modales por click en botones
-   ========================================================= */
-
-function abrirModalesPorClick() {
-  document.querySelectorAll("[data-modal]").forEach((boton) => {
-    boton.addEventListener("click", (evento) => {
-      evento.preventDefault();
-      const idModal = boton.dataset.modal;
-      const elemento = document.getElementById(idModal);
-      if (!elemento) {
-        console.warn("No existe el modal:", idModal);
-        return;
-      }
-      const modal = bootstrap.Modal.getOrCreateInstance(elemento);
-      modal.show();
-    });
-  });
-}
+// Limpiar el hash cuando el usuario cierra el modal manualmente
+// (X, backdrop o Escape). Si el hash ya cambió por "atrás", no tocamos la URL.
+document.addEventListener("hidden.bs.modal", (event) => {
+  const modalCerrado = event.target;
+  if (modalesPorHash[window.location.hash] === modalCerrado.id) {
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search
+    );
+  }
+});
 
 /* =========================================================
-   3. Inicialización
+   2. Inicialización
    ========================================================= */
 
 function inicializar() {
+  // Si la página carga con un hash de modal, el navegador salta al
+  // elemento (al final del documento). Lo regresamos al inicio.
+  if (modalesPorHash[window.location.hash]) {
+    requestAnimationFrame(() =>
+      window.scrollTo({ top: 0, behavior: "instant" })
+    );
+  }
+
   abrirModalDesdeHash();
-  abrirModalesPorClick();
   window.addEventListener("hashchange", abrirModalDesdeHash);
+  window.addEventListener("popstate", abrirModalDesdeHash);
 }
 
 if (document.readyState === "loading") {

@@ -5,184 +5,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos | Lizeth Dorantes Gómez</title>
-    <meta name="description"
-        content="Proyectos de Lizeth Dorantes Gómez: hackathon, landings individuales, portafolio y un e-commerce Full Stack en desarrollo.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Young+Serif&display=swap"
         rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <header id="header-global" class="site-header"></header>
+    <main class="container container--wide" aria-labelledby="proyectos-title">
+        <h1 id="proyectos-title">Mis proyectos</h1>
+        <p style="font-size: 1.1rem; opacity: 0.85; margin-bottom: 3.5rem;">Un recorrido por lo que he construido.</p>
 
-    <main class="proyectos-main">
-        <div class="w-100">
-            <h1>Mis proyectos</h1>
-            <p class="proyectos-intro">
-                Un recorrido por lo que he construido. De un hackathon de un día a un e-commerce Full Stack en proceso.
-            </p>
-
-            <ol class="timeline">
-                <!-- 1. Tierra Deportiva -->
-                <li class="timeline__item">
-                    <div class="timeline__marcador">
-                        <span class="timeline__fecha">SEPT 2026</span>
+        <ol class="timeline">
+            <li class="timeline__item">
+                <div class="timeline__marcador">
+                    <span class="timeline__fecha">SEPT 2026</span>
+                </div>
+                <article class="card timeline__contenido">
+                    <div class="timeline__imagen">
+                        <img src="./images/capturas/tierra-deportiva-captura.png" alt="Tierra Deportiva" loading="lazy">
                     </div>
-                    <article class="timeline__contenido">
-                        <div class="timeline__imagen">
-                            <img src="./images/capturas/tierra-deportiva-captura.png" alt="Captura de la landing page Tierra Deportiva"
-                                loading="lazy">
-                        </div>
-                        <div class="timeline__texto">
-                            <span class="etiqueta etiqueta--terminada">Hackathon · Equipo</span>
-                            <h2>Tierra Deportiva</h2>
-                            <p>Landing page interactiva de productos deportivos mexicanos creada en equipo durante un
-                                hackathon.</p>
-                            <ul class="tarjeta-stack">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Bootstrap</li>
-                            </ul>
-                            <button type="button" class="boton" data-bs-toggle="modal"
-                                data-bs-target="#modal-tierra-deportiva">
-                                Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </article>
-                </li>
-
-                <!-- 2. Neme -->
-                <li class="timeline__item">
-                    <div class="timeline__marcador">
-                        <span class="timeline__fecha">SEPT 2026</span>
+                    <div>
+                        <span class="etiqueta etiqueta--terminada">Hackathon</span>
+                        <h2 style="margin-top: 0.5rem;">Tierra Deportiva</h2>
+                        <p>Landing page interactiva de productos deportivos mexicanos creada en equipo.</p>
+                        <button type="button" class="boton" data-bs-toggle="modal"
+                            data-bs-target="#modal-tierra-deportiva">Ver detalle <i
+                                class="bi bi-arrow-right" aria-hidden="true"></i></button>
                     </div>
-                    <article class="timeline__contenido">
-                        <div class="timeline__imagen">
-                            <img src="./images/capturas/neme-captura.png" alt="Captura de la landing page Neme" loading="lazy">
-                        </div>
-                        <div class="timeline__texto">
-                            <span class="etiqueta etiqueta--terminada">Individual</span>
-                            <h2>Neme</h2>
-                            <p>Landing page de ropa deportiva enfocada en la comodidad para disfrutar el movimiento.
-                                Concepto, identidad visual y desarrollo en una semana.</p>
-                            <ul class="tarjeta-stack">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Bootstrap</li>
-                            </ul>
-                            <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#modal-neme">
-                                Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </article>
-                </li>
+                </article>
+            </li>
 
-                <!-- 3. Este portafolio -->
-                <li class="timeline__item">
-                    <div class="timeline__marcador">
-                        <span class="timeline__fecha">OCT 2026</span>
+            <li class="timeline__item">
+                <div class="timeline__marcador">
+                    <span class="timeline__fecha">SEPT 2026</span>
+                </div>
+                <article class="card timeline__contenido">
+                    <div class="timeline__imagen">
+                        <img src="./images/capturas/neme-captura.png" alt="Captura de la landing page Neme" loading="lazy">
                     </div>
-                    <article class="timeline__contenido">
-                        <div class="timeline__imagen">
-                            <img src="./images/capturas/portafolio-captura.png" alt="Captura del portafolio de Lizeth Dorantes"
-                                loading="lazy">
-                        </div>
-                        <div class="timeline__texto">
-                            <span class="etiqueta etiqueta--proceso">En proceso</span>
-                            <h2>Este portafolio</h2>
-                            <p>Sitio personal construido desde cero con enfoque en accesibilidad, UX y jerarquía visual.
-                                Header y footer como componentes reutilizables, apertura de modales por hash en la URL,
-                                y paleta botánica personalizada.</p>
-                            <ul class="tarjeta-stack">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Bootstrap</li>
-                            </ul>
-                            <button type="button" class="boton" data-bs-toggle="modal"
-                                data-bs-target="#modal-portafolio">
-                                Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </article>
-                </li>
-
-                <!-- 4. Menú dinámico para Sketch & Coffee -->
-                <li class="timeline__item">
-                    <div class="timeline__marcador">
-                        <span class="timeline__fecha">OCT 2026</span>
+                    <div>
+                        <span class="etiqueta etiqueta--terminada">Individual</span>
+                        <h2 style="margin-top: 0.5rem;">Neme</h2>
+                        <p>Landing page de ropa deportiva enfocada en la comodidad para disfrutar el movimiento.
+                            Concepto, identidad visual y desarrollo en una semana.</p>
+                        <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#modal-neme">
+                            Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
                     </div>
-                    <article class="timeline__contenido">
-                        <div class="timeline__imagen">
-                            <img src="./images/capturas/menu-sketch-captura.png" alt="Captura del menú dinámico para Sketch & Coffee"
-                                loading="lazy">
-                        </div>
-                        <div class="timeline__texto">
-                            <span class="etiqueta etiqueta--proceso">En proceso</span>
-                            <h2>Menú dinámico para Sketch &amp; Coffee</h2>
-                            <p>Landing page independiente para el menú de la cafetería, con datos dinámicos para que el
-                                negocio pueda actualizar productos sin tocar código.</p>
-                            <ul class="tarjeta-stack">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                            </ul>
-                            <button type="button" class="boton" data-bs-toggle="modal"
-                                data-bs-target="#modal-menu-sketch">
-                                Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </article>
-                </li>
+                </article>
+            </li>
 
-                <!-- 5. Sketch & Coffee -->
-                <li class="timeline__item">
-                    <div class="timeline__marcador">
-                        <span class="timeline__fecha">Sep – Nov 2026</span>
+            <li class="timeline__item">
+                <div class="timeline__marcador">
+                    <span class="timeline__fecha">OCT 2026</span>
+                </div>
+                <article class="card timeline__contenido">
+                    <div class="timeline__imagen">
+                        <img src="./images/capturas/portafolio-captura.png" alt="Portafolio" loading="lazy">
                     </div>
-                    <article class="timeline__contenido">
-                        <div class="timeline__imagen">
-                            <img src="./images/capturas/sketch-and-coffee-captura.png" alt="Captura del e-commerce Sketch & Coffee"
-                                loading="lazy">
-                        </div>
-                        <div class="timeline__texto">
-                            <span class="etiqueta etiqueta--proceso">En proceso · Equipo</span>
-                            <h2>Sketch &amp; Coffee</h2>
-                            <p>Tienda en línea para una cafetería con identidad 2D. Frontend funcional con validaciones
-                                probadas en Jest, backend en desarrollo con Spring Boot. Coordiné al equipo rotando
-                                entre Scrum Master y Product Owner durante 8 semanas.</p>
-                            <ul class="tarjeta-stack">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Bootstrap</li>
-                                <li>Jest</li>
-                                <li>Figma</li>
-                            </ul>
-                            <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#modal-sketch">
-                                Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </article>
-                </li>
+                    <div>
+                        <span class="etiqueta etiqueta--proceso">En proceso</span>
+                        <h2 style="margin-top: 0.5rem;">Este portafolio</h2>
+                        <p>Sitio personal construido desde cero con enfoque en accesibilidad y UX.</p>
+                        <button type="button" class="boton" data-bs-toggle="modal"
+                            data-bs-target="#modal-portafolio">Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                    </div>
+                </article>
+            </li>
 
-            </ol>
-        </div>
+            <li class="timeline__item">
+                <div class="timeline__marcador">
+                    <span class="timeline__fecha">OCT 2026</span>
+                </div>
+                <article class="card timeline__contenido">
+                    <div class="timeline__imagen">
+                        <img src="./images/capturas/menu-sketch-captura.png"
+                            alt="Captura del menú dinámico para Sketch & Coffee" loading="lazy">
+                    </div>
+                    <div>
+                        <span class="etiqueta etiqueta--proceso">En proceso</span>
+                        <h2 style="margin-top: 0.5rem;">Menú dinámico para Sketch &amp; Coffee</h2>
+                        <p>Landing page independiente para el menú de la cafetería, con datos dinámicos para que el
+                            negocio pueda actualizar productos sin tocar código.</p>
+                        <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#modal-menu-sketch">
+                            Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </article>
+            </li>
+
+            <li class="timeline__item">
+                <div class="timeline__marcador">
+                    <span class="timeline__fecha">Sep – Nov 2026</span>
+                </div>
+                <article class="card timeline__contenido">
+                    <div class="timeline__imagen">
+                        <img src="./images/capturas/sketch-and-coffee-captura.png"
+                            alt="Captura del e-commerce Sketch & Coffee" loading="lazy">
+                    </div>
+                    <div>
+                        <span class="etiqueta etiqueta--proceso">En proceso · Equipo</span>
+                        <h2 style="margin-top: 0.5rem;">Sketch &amp; Coffee</h2>
+                        <p>Tienda en línea para una cafetería con identidad 2D. Frontend funcional con validaciones
+                            probadas en Jest, backend en desarrollo con Spring Boot. Coordiné al equipo rotando
+                            entre Scrum Master y Product Owner durante 8 semanas.</p>
+                        <button type="button" class="boton" data-bs-toggle="modal" data-bs-target="#modal-sketch">
+                            Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </article>
+            </li>
+        </ol>
     </main>
 
-    <footer class="pie">
-        <p>Lizeth Dorantes Gómez &copy; 2026. Escríbeme a <a href="mailto:lzethdg@gmail.com">lzethdg@gmail.com</a></p>
-    </footer>
-
-    <!-- Modales -->
-    <!-- ===== Modal Sketch & Coffee ===== -->
+    <!-- Modales (contenido sin cambios) -->
     <div class="modal fade" id="modal-sketch" tabindex="-1" aria-labelledby="modal-sketch-titulo" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content">
@@ -232,7 +173,6 @@
         </div>
     </div>
 
-    <!-- ===== Modal Neme ===== -->
     <div class="modal fade" id="modal-neme" tabindex="-1" aria-labelledby="modal-neme-titulo" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
             <div class="modal-content">
@@ -280,7 +220,6 @@
         </div>
     </div>
 
-    <!-- ===== Modal Tierra Deportiva ===== -->
     <div class="modal fade" id="modal-tierra-deportiva" tabindex="-1" aria-labelledby="modal-tierra-deportiva-titulo"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
@@ -327,7 +266,6 @@
         </div>
     </div>
 
-    <!-- ===== Modal Portafolio ===== -->
     <div class="modal fade" id="modal-portafolio" tabindex="-1" aria-labelledby="modal-portafolio-titulo"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
@@ -370,14 +308,14 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <span class="text-muted small">Estás aquí</span>
-                    <a href="https://zeth-dg.github.io/zeth-portafolio/" target="_blank" rel="noopener noreferrer" class="boton">Ver
+                    <a href="https://zeth-dg.github.io/zeth-portafolio/" target="_blank" rel="noopener noreferrer"
+                        class="boton">Ver
                         código</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== Modal Menú dinámico ===== -->
     <div class="modal fade" id="modal-menu-sketch" tabindex="-1" aria-labelledby="modal-menu-sketch-titulo"
         aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
@@ -421,9 +359,10 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <footer class="pie">
+        <p>Lizeth Dorantes Gómez &copy; 2026. Escríbeme a <a href="mailto:lzethdg@gmail.com">lzethdg@gmail.com</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
 </body>
 
