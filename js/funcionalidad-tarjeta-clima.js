@@ -122,7 +122,7 @@ export async function buscarClimaVisitante() {
     "mexico df": "Mexico City",
     "mty": "Monterrey",
     "gdl": "Guadalajara",
-    "qro": "Queretaro", 
+    "qro": "Queretaro",
     "ira": "Irapuato"
   };
 
@@ -159,12 +159,13 @@ export async function buscarClimaVisitante() {
     const descripcion = codigosClima[current.weather_code] || "Clima desconocido";
     visitorCondition.textContent = descripcion;
 
-    const estadosCercanos = ["mexico city", "ciudad de mexico", "mexico", "queretaro", "puebla", "morelos", "hidalgo", "tlaxcala"];
-    const estadosExtremos = ["nuevo leon", "yucatan", "quintana roo", "baja california", "chihuahua", "guanajuato", "sonora", "sinaloa"];
+    const estadosCercanos = ["mexico city", "ciudad de mexico", "mexico", "queretaro", "puebla"];
+    const estadosExtremos = ["nuevo leon", "yucatan", "quintana roo", "baja california", "chihuahua", "guanajuato", "sonora", "sinaloa", "veracruz"];
 
     let esCercana = false;
     let esExtrema = false;
     const esInternacional = (country_code !== "MX");
+    const esToluca = (country_code === "MX") && nombreCiudadNormalizado.includes("toluca");
 
     if (country_code === "MX") {
       esCercana = estadosCercanos.some(edo => estadoNormalizado.includes(edo) || nombreCiudadNormalizado.includes(edo));
@@ -174,12 +175,15 @@ export async function buscarClimaVisitante() {
     let disponibilidad = "";
     let frase = "";
 
-    if (esCercana) {
+    if (esToluca) {
+      disponibilidad = "¡Estás en mi ubicación actual! Disponible para presencial, híbrido o remoto.";
+      frase = `¡Estás en mi ciudad! Si quieres, podemos tomarnos un café y hablar de código.`;
+    } else if (esCercana) {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remota.";
       if (nombreCiudadNormalizado.includes("puebla")) {
-        frase = `En ${name} esta mi museo favorito. Hablemos :D`;
+        frase = `En ${name} está mi museo favorito. Hablemos`;
       } else {
-        frase = `¡Estás en mi zona ideal! ${name} está cerca, ¡colaboremos!`;
+        frase = `¡Estás en la zona ideal! ${name} está cerca, ¡colaboremos!`;
       }
     } else if (esInternacional) {
       disponibilidad = "Disponible para trabajo remoto global o reubicación (sujeto a visado y oferta excepcional).";
