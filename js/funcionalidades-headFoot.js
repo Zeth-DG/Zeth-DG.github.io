@@ -22,6 +22,30 @@ export async function cargarHeader() {
   }
 }
 
+export async function cargarFooter() {
+  const contenedorFooter = document.querySelector("#footer-global");
+
+  if (!contenedorFooter) {
+    return;
+  }
+
+  try {
+    const respuesta = await fetch("./componentes/footer.html");
+
+    if (!respuesta.ok) {
+      throw new Error("No se pudo cargar el footer.");
+    }
+
+    const footerHTML = await respuesta.text();
+
+    contenedorFooter.innerHTML = footerHTML;
+
+    marcarEnlaceActivo();
+  } catch (error) {
+    console.error("Error al cargar el footer:", error);
+  }
+}
+
 export function marcarEnlaceActivo() {
   const paginaActual = window.location.pathname.split("/").pop() || "index.html";
 
