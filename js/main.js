@@ -1,10 +1,8 @@
-import { cargarHeader } from "./funcionalidades-header.js";
-import "./funcionalidad-tarjeta-clima.js"; // Se auto-ejecuta al importarse.
+import { cargarHeader, cargarFooter} from "./funcionalidades-headFoot.js";
+import "./funcionalidad-tarjeta-clima.js"; 
 
-// NOTA: cargarHeader() usa fetch("./componentes/header.html").
-// Requiere servidor local (Live Server, python -m http.server, etc.).
-// Abrir los HTML con file:// no cargará el header.
 cargarHeader();
+cargarFooter();
 
 /* =========================================================
    1. Apertura/cierre de modales por hash en la URL
@@ -22,7 +20,6 @@ function abrirModalDesdeHash() {
   const idModal = modalesPorHash[window.location.hash];
 
   // Si hay un modal abierto que ya no corresponde al hash actual
-  // (ej. el usuario presionó "atrás"), lo cerramos.
   const modalAbierto = document.querySelector(".modal.show");
   if (modalAbierto && (!idModal || modalAbierto.id !== idModal)) {
     bootstrap.Modal.getOrCreateInstance(modalAbierto).hide();
@@ -38,7 +35,6 @@ function abrirModalDesdeHash() {
 }
 
 // Limpiar el hash cuando el usuario cierra el modal manualmente
-// (X, backdrop o Escape). Si el hash ya cambió por "atrás", no tocamos la URL.
 document.addEventListener("hidden.bs.modal", (event) => {
   const modalCerrado = event.target;
   if (modalesPorHash[window.location.hash] === modalCerrado.id) {
@@ -55,8 +51,7 @@ document.addEventListener("hidden.bs.modal", (event) => {
    ========================================================= */
 
 function inicializar() {
-  // Si la página carga con un hash de modal, el navegador salta al
-  // elemento (al final del documento). Lo regresamos al inicio.
+  // Si la página carga con un hash de modal, el navegador salta al elemento (al final del documento). Lo regresamos al inicio.
   if (modalesPorHash[window.location.hash]) {
     requestAnimationFrame(() =>
       window.scrollTo({ top: 0, behavior: "instant" })

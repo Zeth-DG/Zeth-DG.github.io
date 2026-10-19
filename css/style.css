@@ -1,23 +1,31 @@
 /* =========================================
-   1. TOKENS & VARIABLES
+   1. TOKENS & VARIABLES (Paleta Victoriana)
    ========================================= */
 :root {
-  --fondo: #F4EFE4;
-  --superficie: #FBF8F1;
-  --tinta: #2A3B2E;
-  --hoja: #6B8E5A;
-  --enlace: #4A6B3A;
-  --flor: #A8574A;
-  --tierra: #2E241C;
-  --tierra-texto: #F4EFE4;
-  --linea: #D9CFBC;
+  /* Fondos contrastados */
+  --fondo: #E8EDE7;       
+  --superficie: #FFFFFF;  
+  
+  /* Textos */
+  --tinta: #162923;       
+  --texto-suave: #5E6B66; 
+  
+  /* Acentos vibrantes */
+  --hoja: #3B7A7A;        
+  --enlace: #2A5C5C;     
+  --flor: #912A3F;       
+  
+  /* Estructura */
+  --tierra: #111A17;      
+  --tierra-texto: #E8EDE7;
+  --linea: #D0D6D1;       
   
   --fuente-titulo: "Young Serif", Georgia, serif;
   --fuente-texto: "Figtree", system-ui, sans-serif;
   
   --radius-card: 0 2rem 0 2rem;
   --radius-btn: 0 1.2rem 0 1.2rem;
-  --shadow: 0 8px 24px rgba(31, 61, 46, 0.08);
+  --shadow: 0 8px 24px rgba(22, 41, 35, 0.08);
   --max-width: 68rem;
 }
 
@@ -57,7 +65,7 @@ a {
 }
 
 a:hover {
-  color: var(--tinta);
+  color: var(--hoja);
   text-decoration: underline;
 }
 
@@ -103,23 +111,25 @@ a:hover {
 /* =========================================
    4. COMPONENTS (Botones, Tarjetas, Etiquetas)
    ========================================= */
+/* Botones con el color de acento (Turquesa profundo) */
 .boton {
   display: inline-block;
   padding: 0.6rem 1.4rem;
-  background: var(--tinta);
+  background: var(--hoja); 
   color: var(--superficie);
   border-radius: var(--radius-btn);
   border: 0;
   font: inherit;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .boton:hover { 
-  background: var(--hoja); 
+  background: var(--tinta); 
   color: var(--superficie); 
   text-decoration: none; 
+  transform: translateY(-2px);
 }
 
 .boton--secundario {
@@ -136,12 +146,12 @@ a:hover {
   color: var(--superficie); 
 }
 
-/* Tarjeta Unificada */
+/* Tarjetas con sombra más profunda para que floten sobre el fondo */
 .card {
   background: var(--superficie);
   border: 1px solid var(--linea);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06); 
   padding: 2.5rem 2rem;
   width: 100%;
   box-sizing: border-box;
@@ -186,7 +196,7 @@ a:hover {
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: var(--hoja);
-  box-shadow: 0 0 0 3px rgba(107, 142, 90, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 122, 122, 0.2); /* Sombra basada en el nuevo turquesa */
 }
 
 .form-group input[aria-invalid="true"],
@@ -196,7 +206,7 @@ a:hover {
 
 .form-group input[aria-invalid="true"]:focus,
 .form-group textarea[aria-invalid="true"]:focus {
-  box-shadow: 0 0 0 3px rgba(168, 87, 74, 0.2);
+  box-shadow: 0 0 0 3px rgba(145, 42, 63, 0.2); /* Sombra basada en el rojo vino */
 }
 
 /* =========================================
@@ -208,7 +218,7 @@ a:hover {
   background-color: var(--superficie);
   padding: 1rem 1.25rem;
   z-index: 1030;
-  box-shadow: 0 4px 20px rgba(31, 61, 46, 0.06);
+  box-shadow: 0 4px 20px rgba(22, 41, 35, 0.06);
   border-bottom: 2px solid var(--linea);
 }
 
@@ -252,8 +262,20 @@ a:hover {
    ========================================= */
 /* Home */
 .hero { text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.hero h2 { color: var(--enlace); margin-bottom: 1rem; }
+
+/* Degradado sutil en el H1 principal */
+.hero h1 {
+  background: linear-gradient(135deg, var(--tinta) 30%, var(--enlace));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.5rem; /* Evita que se corten las letras por el degradado */
+}
+
+.hero h2 { color: var(--hoja); margin-bottom: 1rem; }
 .hero .enlaces { display: flex; gap: 1.5rem; font-size: 2.2rem; margin-top: 2rem; justify-content: center; }
+.hero .enlaces a { color: var(--enlace); }
+.hero .enlaces a:hover { color: var(--hoja); }
 
 .about-grid { display: grid; gap: 2.5rem; align-items: center; }
 .about-grid img { width: 100%; max-width: 20rem; border-radius: 0 3rem 0 3rem; margin: 0 auto; }
@@ -345,23 +367,9 @@ a:hover {
   }
 }
 
-/* Widget del Clima (Contacto) */
-#toluca-card, #result-container { text-align: center; }
-.clima-principal { display: flex; justify-content: center; align-items: center; margin: 1rem 0 0.5rem 0; }
-.clima-temp { font-family: var(--fuente-titulo); font-size: 4.5rem; color: var(--tinta); line-height: 1; }
-.clima-condicion { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; }
-.clima-detalle { font-size: 0.95rem; color: var(--hoja); font-weight: 600; margin: 0; }
-.clima-actualizacion, .clima-fuente { font-size: 0.8rem; color: #888; margin: 0; }
-.clima-actualizacion { margin-top: 1.5rem; margin-bottom: 0.5rem; }
-.clima-fuente a { color: var(--hoja); text-decoration: underline; }
-.clima-frase { margin-top: 1rem; font-weight: 600; color: var(--flor); }
-
-#visitor-section { width: 100%; margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
-#visitorInput { padding: 0.6rem 1rem; border: 1px solid var(--linea); border-radius: 0.5rem; font-family: var(--fuente-texto); font-size: 1rem; background: var(--superficie); color: var(--tinta); width: 100%; max-width: 300px; }
-#visitorInput:focus { outline: 2px solid var(--hoja); border-color: var(--hoja); }
-#visitor-error { text-align: center; margin-top: 0.5rem; }
-
-/* Contacto */
+/* =========================================
+   7. CONTACTO Y WIDGET DEL CLIMA
+   ========================================= */
 .contacto-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -377,12 +385,24 @@ a:hover {
   font-size: 2rem;
   margin-top: 1.5rem;
 }
+.contacto-header .enlaces a { color: var(--enlace); }
+.contacto-header .enlaces a:hover { color: var(--hoja); }
+
+#toluca-card, #result-container { text-align: center; }
+.clima-principal { display: flex; justify-content: center; align-items: center; margin: 1rem 0 0.5rem 0; }
+.clima-temp { font-family: var(--fuente-titulo); font-size: 4.5rem; color: var(--tinta); line-height: 1; }
+.clima-condicion { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; }
+.clima-detalle { font-size: 0.95rem; color: var(--hoja); font-weight: 600; margin: 0; }
+.clima-actualizacion, .clima-fuente { font-size: 0.8rem; color: var(--texto-suave); margin: 0; }
+.clima-actualizacion { margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.clima-fuente a { color: var(--hoja); text-decoration: underline; }
+.clima-frase { margin-top: 1rem; font-weight: 600; color: var(--flor); }
 
 .clima-etiqueta {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #888;
+  color: var(--texto-suave);
   margin: -0.5rem 0 1rem 0;
 }
 
@@ -391,30 +411,6 @@ a:hover {
   color: var(--tinta);
   margin-top: 0.5rem;
 }
-
-/* Mensajes del formulario */
-#form-status.success { color: var(--hoja); }
-#form-status.error { color: var(--flor); }
-#submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
-.error-mensaje {
-  color: var(--flor);
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
-  display: block;
-  min-height: 1.2rem;
-}
-
-/* Widget del Clima (Contacto) */
-#toluca-card, #result-container { text-align: center; }
-.clima-principal { display: flex; justify-content: center; align-items: center; margin: 1rem 0 0.5rem 0; }
-.clima-temp { font-family: var(--fuente-titulo); font-size: 4.5rem; color: var(--tinta); line-height: 1; }
-.clima-condicion { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem 0; }
-.clima-detalle { font-size: 0.95rem; color: var(--hoja); font-weight: 600; margin: 0; }
-.clima-actualizacion, .clima-fuente { font-size: 0.8rem; color: #888; margin: 0; }
-.clima-actualizacion { margin-top: 1.5rem; margin-bottom: 0.5rem; }
-.clima-fuente a { color: var(--hoja); text-decoration: underline; }
-.clima-frase { margin-top: 1rem; font-weight: 600; color: var(--flor); }
 
 /* Búsqueda de visitante */
 .visitor-wrapper {
@@ -466,13 +462,26 @@ a:hover {
 
 #result-container {
   width: 100%;
-  max-width: 32rem; /* Evita que se estire demasiado en pantallas grandes */
+  max-width: 32rem;
   margin: 0 auto;
-  padding: 2rem; /* Ajuste para que se vea como tarjeta centrada */
+  padding: 2rem;
+}
+
+/* Mensajes del formulario */
+#form-status.success { color: var(--hoja); }
+#form-status.error { color: var(--flor); }
+#submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.error-mensaje {
+  color: var(--flor);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+  min-height: 1.2rem;
 }
 
 /* =========================================
-   7. UTILIDADES
+   8. UTILIDADES
    ========================================= */
 .hidden { display: none !important; }
 .mt-2rem { margin-top: 2rem; }
