@@ -177,7 +177,7 @@ export async function buscarClimaVisitante() {
     if (esCercana) {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remota.";
       if (nombreCiudadNormalizado.includes("puebla")) {
-        frase = `${name} mi museo favorito está allá. Hablemos :D`;
+        frase = `En ${name} esta mi museo favorito. Hablemos :D`;
       } else {
         frase = `¡Estás en mi zona ideal! ${name} está cerca, ¡colaboremos!`;
       }
