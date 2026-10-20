@@ -178,13 +178,29 @@ export async function buscarClimaVisitante() {
     if (esToluca) {
       disponibilidad = "¡Estás en mi ubicación actual! Disponible para presencial, híbrido o remoto.";
       frase = `¡Estás en mi ciudad! Si quieres, podemos tomarnos un café y hablar de código.`;
+
+    } else if (nombreCiudadNormalizado.includes("irapuato")) {
+      disponibilidad = "Disponible para remoto, por favor.";
+      frase = `Viví aquí un tiempo, pero no extraño para nada el calor seco. Hoy la máxima ${maxVisitante}°C, necesitaría aire acondicionado. ¡Hablemos!`;
+
+    } else if (nombreCiudadNormalizado.includes("ecatepec") || nombreCiudadNormalizado.includes("cuernavaca")) {
+      disponibilidad = "Disponible para trabajo remoto. Estrictamente remoto.";
+      frase = `Por pura salud mental, si hay un ex viviendo ahí, la modalidad presencial está cancelada. Pero si el proyecto es remoto, ¡hablemos!`;
+
+      // 🌟 AQUÍ ESTÁ EL TRUCO: Xicotepec debe ir ANTES que Puebla
+    } else if (nombreCiudadNormalizado.includes("xicotepec")) {
+      disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
+      frase = `¡Xicotepec de Juárez! Ahí da clases una persona muy especial para mí, así que esta ciudad tiene un pase directo. Hoy hacen ${maxVisitante}°C. ¡Hablemos!`;
+
+    } else if (nombreCiudadNormalizado.includes("puebla") || estadoNormalizado.includes("puebla")) {
+      disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
+      frase = `¡El estado de mi museo favorito y mi crush! Aquí comienza la búsqueda. Si logras encontrar la ciudad exacta, te llevas el easter egg de verdad. (Pista: no es la capital).`;
+
     } else if (esCercana) {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remota.";
-      if (nombreCiudadNormalizado.includes("puebla")) {
-        frase = `En ${name} está mi museo favorito. Hablemos`;
-      } else {
-        frase = `¡Estás en la zona ideal! ${name} está cerca, ¡colaboremos!`;
-      }
+      // Quité la validación extra de puebla aquí porque ya se atrapó arriba
+      frase = `¡Estás en la zona ideal! ${name} está cerca, ¡colaboremos!`;
+
     } else if (esInternacional) {
       disponibilidad = "Disponible para trabajo remoto global o reubicación (sujeto a visado y oferta excepcional).";
       const paisesAmericanos = ["US", "CA", "BZ", "GT", "SV", "HN", "NI", "CR", "PA", "CU", "DO", "PR", "CO", "BR", "AR", "CL", "PE", "EC", "UY", "PY", "BO", "VE"];
