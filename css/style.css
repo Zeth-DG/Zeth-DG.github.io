@@ -542,6 +542,19 @@ a:hover {
   border-color: var(--hoja);
 }
 
+.clima-privacidad {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.clima-privacidad i {
+  color: var(--hoja); /* Tu turquesa */
+}
+
 #visitor-error {
   width: 100%;
   text-align: center;
