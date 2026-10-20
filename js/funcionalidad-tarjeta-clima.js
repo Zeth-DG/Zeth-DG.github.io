@@ -194,6 +194,22 @@ export async function buscarClimaVisitante() {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
       frase = `¡El estado de mi museo favorito y mi crush! Aquí comienza la búsqueda. Si logras encontrar la ciudad exacta, te llevas el easter egg de verdad. (Pista: no es la capital).`;
 
+    } else if (nombreCiudadNormalizado.includes("catemaco")) {
+      disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
+      frase = `Tierra de mi abuela paterna. Sé que hace mucho calor aquí, pero la nostalgia de los recuerdos, se compensa. Hoy hacen ${maxVisitante}°C. ¡Hablemos!`;
+
+    } else if (nombreCiudadNormalizado.includes("xalapa") || nombreCiudadNormalizado.includes("jalapa")) {
+      disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
+      frase = `¡Xalapa! Una de mis ciudades favoritas por su clima y porque es la tierra de mi abuelo paterno. Un cafecito y codificar suena como el plan ideal. ¡Hablemos!`;
+
+    } else if (nombreCiudadNormalizado.includes("vancouver")) {
+      disponibilidad = "Disponible para trabajo remoto global o reubicación (sujeto a visado y oferta excepcional).";
+      frase = `¡Vancouver! Estuve de intercambio aquí y me enamoré de la ciudad. Hoy hacen ${maxVisitante}°C. Estoy abierta a reubicarme si el proyecto es increíble. ¡Hablemos!`;
+
+    } else if (nombreCiudadNormalizado.includes("ixtlahuaca")) {
+      disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
+      frase = `¡Tierra de mis abuelos maternos! Este es el lugar donde quiero vivir en el futuro. Hoy hacen ${maxVisitante}°C. ¡Definitivamente hablemos!`;
+
     } else if (esCercana) {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remota.";
       // Quité la validación extra de puebla aquí porque ya se atrapó arriba
