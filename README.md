@@ -1,5 +1,3 @@
-
-```markdown
 # Portafolio Personal | Lizeth Dorantes
 
 ¡Hola! Soy Zeth, desarrolladora Full Stack Jr. Este es mi portafolio personal, un proyecto que construí sin plantillas para mostrar mis habilidades técnicas,
