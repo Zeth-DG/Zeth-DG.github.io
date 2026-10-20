@@ -186,11 +186,9 @@ export async function buscarClimaVisitante() {
     } else if (nombreCiudadNormalizado.includes("ecatepec") || nombreCiudadNormalizado.includes("cuernavaca")) {
       disponibilidad = "Disponible para trabajo remoto. Estrictamente remoto.";
       frase = `Por pura salud mental, si hay un ex viviendo ahí, la modalidad presencial está cancelada. Pero si el proyecto es remoto, ¡hablemos!`;
-
-      // 🌟 AQUÍ ESTÁ EL TRUCO: Xicotepec debe ir ANTES que Puebla
     } else if (nombreCiudadNormalizado.includes("xicotepec")) {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
-      frase = `¡Xicotepec de Juárez! Ahí da clases una persona muy especial para mí, así que esta ciudad tiene un pase directo. Hoy hacen ${maxVisitante}°C. ¡Hablemos!`;
+      frase = `¿Xicotepec de Juárez? Ahí da clases mi crush, así que esta ciudad tiene un pase directo. ¡Hablemos!`;
 
     } else if (nombreCiudadNormalizado.includes("puebla") || estadoNormalizado.includes("puebla")) {
       disponibilidad = "Disponible para modalidad presencial, híbrida o remoto.";
