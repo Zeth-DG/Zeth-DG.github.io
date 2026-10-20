@@ -20,8 +20,11 @@
 <body>
     <header id="header-global" class="site-header"></header>
     <main class="container container--wide" aria-labelledby="proyectos-title">
-        <h1 id="proyectos-title">Mis proyectos</h1>
-        <p style="font-size: 1.1rem; opacity: 0.85; margin-bottom: 3.5rem;">Un recorrido por lo que he construido.</p>
+
+        <div class="text-center mb-5">
+            <h1 id="proyectos-title">Mis proyectos</h1>
+            <p class="mx-auto" style="font-size: 1.1rem; opacity: 0.85;">Un recorrido por lo que he construido.</p>
+        </div>
 
         <ol class="timeline">
             <li class="timeline__item">
@@ -385,7 +388,8 @@
                             variable interna para facilitar y optimizar la comparación exacta de contactos.</li>
                         <li><strong>Funcionalidades Core:</strong> Desarrollé las funciones principales de
                             <code>agregarContacto</code> y <code>existeContacto</code> (esta última retornando un
-                            booleano puro para validar la existencia sin lanzar excepciones innecesarias).</li>
+                            booleano puro para validar la existencia sin lanzar excepciones innecesarias).
+                        </li>
                         <li><strong>Manejo de excepciones:</strong> Fui responsable directo de crear e implementar la
                             excepción personalizada para validar que no se ingresaran valores vacíos o nulos
                             (<code>InvalidContactDataException</code>).</li>
@@ -414,8 +418,8 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <span class="text-muted small">Proyecto en equipo</span>
-                    <a href="https://github.com/vences10/Hackaton2_AgendaTelefonica/tree/develop" target="_blank" rel="noopener noreferrer"
-                        class="boton">Ver código</a>
+                    <a href="https://github.com/vences10/Hackaton2_AgendaTelefonica/tree/develop" target="_blank"
+                        rel="noopener noreferrer" class="boton">Ver código</a>
                 </div>
             </div>
         </div>
