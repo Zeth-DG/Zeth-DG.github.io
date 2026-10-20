@@ -3,8 +3,7 @@
 ¡Hola! Soy Zeth, desarrolladora Full Stack Jr. Este es mi portafolio personal, un proyecto que construí sin plantillas para mostrar mis habilidades técnicas,
 mi transición de la biotecnología al desarrollo de software, y mi atención al detalle en la experiencia de usuario.
 
-🌐 **[Visita el portafolio en vivo aquí](https://zeth-dg.github.io/)**
-
+🌐 <a href="https://zeth-dg.github.io/" target="_blank" rel="noopener noreferrer"><strong>Visita el portafolio en vivo aquí</strong></a>
 ---
 
 ## Características principales
