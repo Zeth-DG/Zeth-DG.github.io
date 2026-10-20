@@ -75,7 +75,7 @@ a:hover {
 }
 
 /* =========================================
-   3. LAYOUT (Containers & Grids)
+   3. LAYOUT (Containers & grids)
    ========================================= */
 .container {
   max-width: var(--max-width);
@@ -109,7 +109,7 @@ a:hover {
 }
 
 /* =========================================
-   4. COMPONENTS (Botones, Tarjetas, Etiquetas)
+   4. COMPONENTS (Botones, tarjetas, etiquetas)
    ========================================= */
 /* Botones con el color de acento (Turquesa profundo) */
 .boton {
@@ -176,7 +176,7 @@ a:hover {
 .etiqueta--oscura { background: var(--tinta); color: var(--superficie); border-color: var(--tinta); }
 .etiqueta--aprendiendo { border-color: var(--flor); color: var(--flor); border-style: dashed; }
 
-/* Formularios */
+/* Formulario */
 .form-group { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
 .form-group label { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem; }
 
@@ -196,7 +196,7 @@ a:hover {
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
   border-color: var(--hoja);
-  box-shadow: 0 0 0 3px rgba(59, 122, 122, 0.2); /* Sombra basada en el nuevo turquesa */
+  box-shadow: 0 0 0 3px rgba(59, 122, 122, 0.2); 
 }
 
 .form-group input[aria-invalid="true"],
@@ -206,7 +206,7 @@ a:hover {
 
 .form-group input[aria-invalid="true"]:focus,
 .form-group textarea[aria-invalid="true"]:focus {
-  box-shadow: 0 0 0 3px rgba(145, 42, 63, 0.2); /* Sombra basada en el rojo vino */
+  box-shadow: 0 0 0 3px rgba(145, 42, 63, 0.2); 
 }
 
 /* =========================================
@@ -269,7 +269,7 @@ a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  padding-bottom: 0.5rem; /* Evita que se corten las letras por el degradado */
+  padding-bottom: 0.5rem; 
 }
 
 .hero h2 { color: var(--hoja); margin-bottom: 1rem; }
@@ -304,7 +304,7 @@ a:hover {
   gap: 2.5rem; 
   margin-bottom: 4rem; 
   width: 100%;
-  max-width: 100%; /* 🌟 EL TRUCO: Anula el límite de 65ch del CSS global */
+  max-width: 100%; /*para que la tarjeta ocupe el espacio correcto*/
 }
 
 /* Línea vertical */
@@ -357,7 +357,6 @@ a:hover {
   min-width: 0;
 }
 
-/* Anulamos el límite de 65ch para los párrafos de la tarjeta */
 .timeline__contenido p {
   max-width: 100%;
   font-size: 1.1rem;
