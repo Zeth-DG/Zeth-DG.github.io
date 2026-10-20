@@ -85,12 +85,13 @@
                 <p class="clima-max">Máxima hoy: <span id="tolucaMax">--°C</span></p>
 
                 <p id="toluca-updated" class="clima-actualizacion">Actualizado: --</p>
-                <p class="clima-fuente">Datos de <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></p>
+                <p class="clima-fuente">Datos de <a href="https://open-meteo.com/" target="_blank"
+                        rel="noopener noreferrer">Open-Meteo</a></p>
                 </p>
             </div>
         </div>
 
-        <!-- Búsqueda de visitante (fuera del grid) -->
+        <!-- Búsqueda de visitante-->
         <section class="visitor-wrapper" aria-label="Consultar clima en otra ubicación">
             <div id="visitor-section">
                 <h3>Ingresa una ciudad</h3>
@@ -99,6 +100,9 @@
                     <input type="text" name="visitor-input" id="visitorInput" placeholder="Ej. CDMX, Querétaro">
                     <button type="button" id="visitorBtn" class="boton">Buscar</button>
                 </div>
+                <p class="clima-privacidad">
+                    <i class="bi bi-shield-check" aria-hidden="true"></i> Tu ubicación no se almacena; solo se usa en tiempo real para consultar la API del clima.
+                </p>
                 <p id="visitor-error" class="error-mensaje" role="alert" aria-live="polite"></p>
             </div>
 
