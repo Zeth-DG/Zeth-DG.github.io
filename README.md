@@ -69,6 +69,10 @@ Si tienes alguna pregunta, propuesta o simplemente quieres charlar sobre código
 *   **LinkedIn:** [Lizeth Dorantes](https://www.linkedin.com/in/lizeth-dorantes/)
 *   **GitHub:** [@Zeth-DG](https://github.com/Zeth-DG)
 *   **Email:** lzethdg@gmail.com
-```
-   git push origin develop
-   ```
+
+
+
+
+
+
+
