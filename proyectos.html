@@ -106,7 +106,28 @@
 
             <li class="timeline__item">
                 <div class="timeline__marcador">
-                    <span class="timeline__fecha">Sep – Nov 2026</span>
+                    <span class="timeline__fecha">OCT 2026</span>
+                </div>
+                <article class="card timeline__contenido">
+                    <div class="timeline__imagen">
+                        <img src="./images/capturas/agenda-captura.png" alt="Agenda Telefónica en Java" loading="lazy">
+                    </div>
+                    <div>
+                        <span class="etiqueta etiqueta--terminada">Hackathon · Java</span>
+                        <h2 style="margin-top: 0.5rem;">Agenda Telefónica</h2>
+                        <p>Aplicación de consola para gestionar contactos aplicando POO, interfaces, manejo de
+                            excepciones y validaciones lógicas.</p>
+                        <button type="button" class="boton" data-bs-toggle="modal"
+                            data-bs-target="#modal-agenda-telefonica">
+                            Ver detalle <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </article>
+            </li>
+
+            <li class="timeline__item">
+                <div class="timeline__marcador">
+                    <span class="timeline__fecha">SEP – NOV 2026</span>
                 </div>
                 <article class="card timeline__contenido">
                     <div class="timeline__imagen">
@@ -238,7 +259,8 @@
                     <p>Quería un portafolio que no se sintiera como una plantilla genérica. A partir de una ilustración
                         clásica de Art Nouveau, extraje una paleta de alto contraste (blanco puro sobre fondos fríos,
                         con acentos en turquesa profundo y rojo vino) que conecta mi formación en biotecnología con la
-                        ingeniería de software y mi pasión por el arte. La tipografía combina una serif cálida (Young Serif) con una sans
+                        ingeniería de software y mi pasión por el arte. La tipografía combina una serif cálida (Young
+                        Serif) con una sans
                         legible (Figtree), y la estructura prioriza que el contenido respire.</p>
 
                     <h3>Mi rol y aporte</h3>
@@ -251,7 +273,8 @@
                         <li><strong>Accesibilidad (a11y):</strong> Implementación de un sistema de validación de
                             formularios desde cero (desactivando la nativa con <code>novalidate</code>), manejo de
                             <code>aria-invalid</code>, <code>aria-live</code> para lectores de pantalla, y focus
-                            automático en errores.</li>
+                            automático en errores.
+                        </li>
                         <li><strong>Arquitectura y UX:</strong> Header cargado dinámicamente vía <code>fetch()</code>
                             para no duplicar código. Enrutamiento de modales por hash en la URL respetando el historial
                             del navegador. Reestructuración del layout (CSS Grid) para eliminar elementos huérfanos en
@@ -276,7 +299,8 @@
                         Bootstrap Icons, Open-Meteo API.</p>
 
                     <h3>Estado y siguiente paso</h3>
-                    <p>En línea y en mejora continua. Siguiente paso: tener una versión en inglés y añadir un modo oscuro (Dark Mode) utilizando los mismos tokens de
+                    <p>En línea y en mejora continua. Siguiente paso: tener una versión en inglés y añadir un modo
+                        oscuro (Dark Mode) utilizando los mismos tokens de
                         diseño.</p>
                 </div>
                 <div class="modal-footer justify-content-between">
@@ -327,6 +351,71 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <span class="text-muted small">Demo (próximamente)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ===== AGENDA TELEFÓNICA ===== -->
+    <div class="modal fade" id="modal-agenda-telefonica" tabindex="-1" aria-labelledby="modal-agenda-telefonica-titulo"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-3" id="modal-agenda-telefonica-titulo">Agenda Telefónica</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid rounded mb-3 w-100" src="./images/agenda-telefonica.png"
+                        alt="Consola de la Agenda Telefónica">
+
+                    <h3>El problema</h3>
+                    <p>Desarrollar en equipo (4 personas) un sistema de gestión de contactos para consola. El reto
+                        principal era manejar estrictas reglas de negocio: evitar duplicados (ignorando mayúsculas y
+                        acentos), validar datos de entrada, respetar un límite de capacidad y permitir búsquedas
+                        precisas.</p>
+
+                    <h3>Mi rol y aporte</h3>
+                    <p>Aunque el equipo colaboró en la estructura base (clases entidad, directorio e instancias), yo me
+                        encargué de las siguientes áreas críticas:</p>
+                    <ul>
+                        <li><strong>Normalización y búsqueda:</strong> Implementé la lógica para normalizar los datos,
+                            evitando que los acentos, caracteres especiales o el uso de mayúsculas/minúsculas afectaran
+                            la experiencia del usuario al buscar o registrar un contacto.</li>
+                        <li><strong>Lógica de comparación:</strong> Concatené el nombre y el apellido en una sola
+                            variable interna para facilitar y optimizar la comparación exacta de contactos.</li>
+                        <li><strong>Funcionalidades Core:</strong> Desarrollé las funciones principales de
+                            <code>agregarContacto</code> y <code>existeContacto</code> (esta última retornando un
+                            booleano puro para validar la existencia sin lanzar excepciones innecesarias).</li>
+                        <li><strong>Manejo de excepciones:</strong> Fui responsable directo de crear e implementar la
+                            excepción personalizada para validar que no se ingresaran valores vacíos o nulos
+                            (<code>InvalidContactDataException</code>).</li>
+                    </ul>
+
+                    <h3>Retos técnicos</h3>
+                    <ul>
+                        <li><strong>Limpieza de datos (Data Cleansing):</strong> El mayor reto fue lograr que el sistema
+                            reconociera "José" y "jose" como el mismo contacto. Resolví esto aplicando técnicas de
+                            normalización de cadenas (removiendo diacríticos/acentos) y estandarizando a minúsculas
+                            antes de hacer cualquier comparación.</li>
+                        <li><strong>Trabajo en equipo y Git:</strong> Coordinar un repositorio compartido entre 4
+                            personas, dividiendo las responsabilidades (estructura, entidades, excepciones y lógica)
+                            para evitar conflictos de código.</li>
+                        <li><strong>Validación temprana:</strong> Asegurar que los datos se validaran antes de intentar
+                            modificar la colección, previniendo estados inconsistentes en el directorio.</li>
+                    </ul>
+
+                    <h3>Tecnologías</h3>
+                    <p>Java, Programación Orientada a Objetos (POO), Interfaces, Excepciones Personalizadas, Collections
+                        (ArrayList), Git (Trabajo colaborativo).</p>
+
+                    <h3>Estado y siguiente paso</h3>
+                    <p>Terminado. Siguiente paso: implementar una interfaz gráfica (JavaFX o Swing) o migrarlo a una API
+                        REST con Spring Boot conectada a una base de datos SQL.</p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <span class="text-muted small">Proyecto en equipo</span>
+                    <a href="https://github.com/vences10/Hackaton2_AgendaTelefonica/tree/develop" target="_blank" rel="noopener noreferrer"
+                        class="boton">Ver código</a>
                 </div>
             </div>
         </div>
